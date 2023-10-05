@@ -1,5 +1,5 @@
 # 🪂 Clara's Portfolio
-Welcome to my data portfolio
+🔆 Welcome to my data portfolio! 🔆
 
 ## ℹ️ Table of Contents
 
