@@ -75,8 +75,6 @@ GROUP BY p.productCode
 ORDER BY product_performance DESC
 LIMIT 10;
 
-/* Answer: Analysing the query results of comparing low stock with product performance we can see that, 6 out of 10 cars belong to the 'Classic Cars' product line, 
-which we sell frequently with high product performance. Therefore, we should restock "Classic Cars" properly.*/
 
 /*Question 2: How Should We Match Marketing and Communication Strategies to Customer Behavior? */
 -- Write a query to find the Top five VIP customers
@@ -112,8 +110,7 @@ GROUP by pc.customerNumber
 ORDER BY profit ASC
 LIMIT 5;
 
-/* Answer: Analysing the query results of top and bottom customers in terms of profit generation, we need to offer loyalty rewards and priority services for our top 
-customers to retain them. Also for bottom customers, we need to solicit feedback to better understand their preferences, expected pricing, discounts and offers to increase our sales.*/
+
 
 /*Question 3: How Much Can We Spend on Acquiring New Customers? */
 -- Write a query to compute the average of customer profits using the CTE on the previous screen.
@@ -130,6 +127,3 @@ ORDER BY profit DESC
 SELECT AVG(profit) as ltv
 FROM Profit_customer;
 
-/* Answer: The average customer lifetime value of our store is $ 39,040. This means for every new customer we make a profit of 39,040 dollars. We can use this to predict 
-how much we can spend on new customer acquisition, and at the same time maintain or increase our profit levels.*/ 
- 
