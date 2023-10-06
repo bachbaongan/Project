@@ -1,7 +1,7 @@
 /*-- Project: Customers and Products Analysis Using SQL
 
 Welcome to my project where I will be conducting data analysis on a scale model car database to extract KPI's in order to make smarter decisions.
-
+analyze data from a sales records database for scale model cars and extract information for decision-making.
 During this project, there are THREE questions we want to ask ourselves.
  
 Question 1: Which products should we order more of or less of?
