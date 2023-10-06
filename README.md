@@ -2,11 +2,15 @@
 🔆 Welcome to my data portfolio! 🔆
 
 ## ℹ️ Table of Contents
+🚗 [SQL: Customers and Products Analysis](https://github.com/bachbaongan/Portfolio_Data/edit/main/README.md#customers-and-products-analysis-for-a-car-company)
 
 🏃‍♀️ [R + Tableau: Bellabeat Fitness Data Analysis](https://github.com/bachbaongan/Portfolio_Data/edit/main/README.md#bellabeat-fitness-data-analysis-in-r-and-tableau)
 
 📚 [Amazon Top 50 Bestselling Books 2019-2022](https://github.com/bachbaongan/Portfolio_Data/edit/main/README.md#amazon-top-50-bestselling-books-2019-2022)
 
+## Customers and Products Analysis
+  * Analyze sales records database for scale model cars and extract information for decision-making
+  * [Explore the project in SQL](https://github.com/bachbaongan/Portfolio_Data/tree/main/SQL/CPA)
 
 ## Bellabeat Fitness Data Analysis in R and Tableau
   * Analyze the fitness trends within a dataset of 30 users to inform and optimize our company's marketing strategy.
