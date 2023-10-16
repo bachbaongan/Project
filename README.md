@@ -8,6 +8,8 @@
 
 📚 [Amazon Top 50 Bestselling Books 2019-2022](https://github.com/bachbaongan/Portfolio_Data/edit/main/README.md#amazon-top-50-bestselling-books-2019-2022)
 
+🚢 [SQL + Tableau: Northwind Trader Analysis](https://github.com/bachbaongan/Portfolio_Data/tree/main/SQL/Northwind%20Trader)
+
 ## Customers and Products Analysis
   * Analyze sales records database for scale model cars and extract information for decision-making
   * [Explore the project in SQL](https://github.com/bachbaongan/Portfolio_Data/tree/main/SQL/CPA)
@@ -22,3 +24,7 @@
   * Analyze a dataset comprising 550 books, categorized into fiction and non-fiction genres based on Goodreads.
   * Built a dashboard in Tableau showing valuable insights into the evolving trends within the book market over the past decade.
   * [View the dashboard in Tableau](https://public.tableau.com/app/profile/clara.bach/viz/AmazonTop50Bestsellingbooks2009-2022/Dashboard1)
+
+## Northwind Traders Analysis
+ * Analyze sales database for insights and extract information for decision-making
+ * [View the dashboard in Tableau](https://public.tableau.com/app/profile/clara.bach/viz/NorthwindTraderDashboard/Dashboard1)
