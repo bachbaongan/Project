@@ -4,11 +4,11 @@
 ## ℹ️ Table of Contents
 🚗 [SQL: Customers and Products Analysis](https://github.com/bachbaongan/Portfolio_Data/blob/main/README.md#customers-and-products-analysis)
 
-🏃‍♀️ [R + Tableau: Bellabeat Fitness Data Analysis](https://github.com/bachbaongan/Portfolio_Data/edit/main/README.md#bellabeat-fitness-data-analysis-in-r-and-tableau)
+🏃‍♀️ [R + Tableau: Bellabeat Fitness Data Analysis](https://github.com/bachbaongan/Portfolio_Data/blob/main/README.md#bellabeat-fitness-data-analysis-in-r-and-tableau)
 
-📚 [Amazon Top 50 Bestselling Books 2019-2022](https://github.com/bachbaongan/Portfolio_Data/edit/main/README.md#amazon-top-50-bestselling-books-2019-2022)
+📚 [Amazon Top 50 Bestselling Books 2019-2022](https://github.com/bachbaongan/Portfolio_Data/blob/main/README.md#amazon-top-50-bestselling-books-2019-2022)
 
-🚢 [SQL + Tableau: Northwind Trader Analysis](https://github.com/bachbaongan/Portfolio_Data/edit/main/README.md#northwind-traders-analysis)
+🚢 [SQL + Tableau: Northwind Trader Analysis](https://github.com/bachbaongan/Portfolio_Data/blob/main/README.md#northwind-traders-analysis)
 
 ## Customers and Products Analysis
   * Analyze sales records database for scale model cars and extract information for decision-making
