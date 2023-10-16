@@ -2,7 +2,7 @@
 🔆 Welcome to my data portfolio! 🔆
 
 ## ℹ️ Table of Contents
-🚗 [SQL: Customers and Products Analysis](https://github.com/bachbaongan/Portfolio_Data/edit/main/README.md#customers-and-products-analysis-for-a-car-company)
+🚗 [SQL: Customers and Products Analysis](https://github.com/bachbaongan/Portfolio_Data/blob/main/README.md#customers-and-products-analysis)
 
 🏃‍♀️ [R + Tableau: Bellabeat Fitness Data Analysis](https://github.com/bachbaongan/Portfolio_Data/edit/main/README.md#bellabeat-fitness-data-analysis-in-r-and-tableau)
 
