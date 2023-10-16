@@ -8,7 +8,7 @@
 
 📚 [Amazon Top 50 Bestselling Books 2019-2022](https://github.com/bachbaongan/Portfolio_Data/edit/main/README.md#amazon-top-50-bestselling-books-2019-2022)
 
-🚢 [SQL + Tableau: Northwind Trader Analysis](https://github.com/bachbaongan/Portfolio_Data/tree/main/SQL/Northwind%20Trader)
+🚢 [SQL + Tableau: Northwind Trader Analysis](https://github.com/bachbaongan/Portfolio_Data/edit/main/README.md#northwind-traders-analysis)
 
 ## Customers and Products Analysis
   * Analyze sales records database for scale model cars and extract information for decision-making
