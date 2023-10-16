@@ -27,4 +27,5 @@
 
 ## Northwind Traders Analysis
  * Analyze sales database for insights and extract information for decision-making
+ * [Explore the project in SQL](https://github.com/bachbaongan/Portfolio_Data/tree/main/SQL/Northwind%20Trader)
  * [View the dashboard in Tableau](https://public.tableau.com/app/profile/clara.bach/viz/NorthwindTraderDashboard/Dashboard1)
