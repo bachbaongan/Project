@@ -15,4 +15,4 @@ GROUP BY s.customer_id
 ORDER BY s.customer_id
 ~~~~
 ### Output:
-![output](/Users/clarabach/Downloads/Data_Analyst/Project/8_week_SQL_challenge/Case study #1 - Danny's Diner/CS1 Q1.png)
+![output](/Users/clarabach/Downloads/Data_Analyst/Project/8_week_SQL_challenge/Casestudy1 _Danny's_Diner/CS1 Q1.png)
