@@ -144,6 +144,7 @@ ORDER BY s.customer_id;
 ~~~~
 ### Output:
 ![CS1 q8](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/7482defb-41a5-431e-84d9-e660a4e0701d)
+
 Before becoming members,
 
 * Customer A spent $25 on 2 items
