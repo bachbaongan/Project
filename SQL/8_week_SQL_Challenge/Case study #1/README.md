@@ -16,3 +16,7 @@ ORDER BY s.customer_id
 ~~~~
 ### Output:
 ![CS1 Q1](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/a48c1832-c101-4bdc-9594-57deb7368a04)
+
+* Customer A spent $76.
+* Customer B spent $74.
+* Customer C spent $36.
