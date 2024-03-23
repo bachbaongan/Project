@@ -51,7 +51,7 @@ FROM offices;
 <img width="330" alt="Summary database" src="https://github.com/bachbaongan/Portfolio_Data/assets/144385168/b9e81e19-588a-4a98-8185-880268924b84">
 
 ## Question and Solution:
-### Question 1: Which products should we order more of or less of?
+### 1: Which products should we order more of or less of?
 ~~~~sql
 -- Write a query to compute the low stock for each product using a correlated subquery  
 SELECT productCode, Round((SUM(quantityOrdered)*1.0/ ( SELECT quantityInStock 
@@ -95,7 +95,7 @@ LIMIT 10;
 Analyzing the query results of comparing low stock with product performance we can see that, 6 out of 10 cars belong to the 'Classic Cars' product line, 
 which we sell frequently with high product performance. Therefore, we should restock "Classic Cars" properly.
 
-### Question 2: How should we tailor marketing and communication strategies to customer behaviours?
+### 2: How should we tailor marketing and communication strategies to customer behaviours?
 ~~~~sql
 -- Write a query to find the Top five VIP customers
 WITH Profit_customer AS (
@@ -142,7 +142,7 @@ LIMIT 5;
 
 Analyzing the query results of top and bottom customers in terms of profit generation, we need to offer loyalty rewards and priority services for our top customers to retain them. Also for bottom customers, we need to solicit feedback to better understand their preferences, expected pricing, discounts and offers.
 
-### Question 3: How much can we spend on acquiring new customers?
+### 3: How much can we spend on acquiring new customers?
 ~~~~sql
 WITH Profit_customer AS (
 SELECT o.customerNumber, sum(od.quantityOrdered*(od.priceEach-p.buyPrice)) as profit
