@@ -1,4 +1,4 @@
-# Project: Northwind Traders Analysis 
+# 🚢 Northwind Traders Analysis 
 
 In this project, I will analyze Northwind Traders, an international gourmet food distributor, to find insights and help the management team make strategic decisions in several aspects of the business. The projects focus on:
 
