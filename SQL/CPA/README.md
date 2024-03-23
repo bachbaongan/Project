@@ -53,7 +53,7 @@ FROM offices;
 ## Question and Solution:
 ### 1: Which products should we order more of or less of?
 ~~~~sql
--- Write a query to compute the low stock for each product using a correlated subquery  
+-- Query to compute the low stock for each product using a correlated subquery  
 SELECT productCode, Round((SUM(quantityOrdered)*1.0/ ( SELECT quantityInStock 
 					               FROM products AS p
 					               WHERE p.productCode=od.productCode)), 2) AS low_stock														
@@ -62,14 +62,14 @@ GROUP BY productCode
 ORDER BY low_stock DESC
 LIMIT 10;
   
--- Write a query to compute the product performance for each product.
+-- Query to compute the product performance for each product.
 SELECT productCode, SUM(quantityOrdered*priceEach) AS product_performance																
 FROM orderdetails 
 GROUP BY productCode
 ORDER BY product_performance DESC
 LIMIT 10;
 	 
--- Write a query to combine low stock and product performance queries using CTE to display priority products for restocking 
+-- Query to combine low stock and product performance queries using CTE to display priority products for restocking 
 With low_stock_products AS (
 SELECT productCode, 
        Round((SUM(quantityOrdered)*1.0/ ( SELECT quantityInStock 
@@ -97,7 +97,7 @@ which we sell frequently with high product performance. Therefore, we should res
 
 ### 2: How should we tailor marketing and communication strategies to customer behaviours?
 ~~~~sql
--- Write a query to find the Top five VIP customers
+-- Query to find the Top five VIP customers
 WITH Profit_customer AS (
 SELECT o.customerNumber, sum(od.quantityOrdered*(od.priceEach-p.buyPrice)) AS profit
 FROM orders AS o
@@ -118,7 +118,7 @@ LIMIT 5;
 
  <img width="392" alt="Question 2 top 5 VIP" src="https://github.com/bachbaongan/Portfolio_Data/assets/144385168/ee285176-b94b-4de4-a0c0-5d1f8717b2bf">
 ~~~~sql
--- Write a query to find The Top five least-engaged customers
+-- Query to find The Top five least-engaged customers
 WITH Profit_customer AS (
 SELECT o.customerNumber, sum(od.quantityOrdered*(od.priceEach-p.buyPrice)) AS profit
 FROM orders AS o
@@ -144,6 +144,7 @@ Analyzing the query results of top and bottom customers in terms of profit gener
 
 ### 3: How much can we spend on acquiring new customers?
 ~~~~sql
+-- Query to compute the average of customer profits using the CTE on the previous screen
 WITH Profit_customer AS (
 SELECT o.customerNumber, sum(od.quantityOrdered*(od.priceEach-p.buyPrice)) as profit
 FROM orders as o
