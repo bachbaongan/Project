@@ -117,6 +117,7 @@ LIMIT 5;
 **Top 5 VIP customers**
 
  <img width="392" alt="Question 2 top 5 VIP" src="https://github.com/bachbaongan/Portfolio_Data/assets/144385168/ee285176-b94b-4de4-a0c0-5d1f8717b2bf">
+ 
 ~~~~sql
 -- Query to find The Top five least-engaged customers
 WITH Profit_customer AS (
