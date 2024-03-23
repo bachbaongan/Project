@@ -1,4 +1,4 @@
-# Project: Customers and Products Analysis Using SQL
+# 🚗 Customers and Products Analysis Using SQL
 
 In this project, I will be conducting data analysis on a scale model car database to extract key performance indicators (KPIs) to make smarter decisions, by answering **THREE questions**:
 
