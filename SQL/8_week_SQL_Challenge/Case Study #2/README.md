@@ -1,5 +1,19 @@
 # 🍕Case Study #2 - Pizza Runner
 ![2](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/2a76e725-e079-44ed-9790-678ef0651712)
+
+## 📖 Table of contents:
+
+* [Business task]
+* [Entity Relationship Diagram]
+* [Data Cleaning & Transformation]
+* [Question and Solution]
+
+   *  [A. Pizza Metrics](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%232/README.md#a-pizza-metrics)
+   *  [B. Runner and Customer Experience]
+   *  [C. Ingredient Optimisation]
+   *  [D. Pricing and Ratings]
+   *  [E. Bonus Questions]  	
+
 ## Business task: 
 Danny is expanding his new Pizza Empire and at the same time, he wants to Uberize it, so Pizza Runner was launched!
 
