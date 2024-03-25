@@ -8,7 +8,7 @@ Danny started by recruiting “runners” to deliver fresh pizza from Pizza Runn
 ## Entity Relationship Diagram
 ![Pizza Runner](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/adbb7d47-6e4b-450b-b419-1d711adac42c)
 
-## Data Cleaning & Transformation
+## 🧹 Data Cleaning & Transformation
 ### Table: customer_orders
 ![Customer before](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/ec282ecd-8476-4ab3-9935-297eda0c09b9)
 
