@@ -11,6 +11,7 @@ Danny started by recruiting “runners” to deliver fresh pizza from Pizza Runn
 ## Data Cleaning & Transformation
 ### Table: customer_orders
 ![Customer before](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/ec282ecd-8476-4ab3-9935-297eda0c09b9)
+
 Create a temporary table with all the columns and remove incorrect values 
 ~~~~sql
 CREATE TEMP TABLE customer_orders_temp AS 
@@ -22,12 +23,15 @@ CASE WHEN extras LIKE 'null' or extras='' THEN null -- Remove text 'null' and bl
 order_time
 FROM pizza_runner.customer_orders;
 ~~~~
+
 #### Output new temporary table:
 ![customer after](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/804e5878-8c33-4764-9710-2a70b13f5d1a)
 
 ### Table: runner_orders
 ![runner before](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/c195265f-387c-4bb9-aa85-d8b87167837b)
+
 Create a temporary table with all the columns and remove incorrect values 
+
 ~~~~sql
 CREATE TEMP TABLE runner_orders_temp AS
 SELECT order_id, runner_id,
@@ -47,11 +51,16 @@ FROM pizza_runner.runner_orders
 ~~~~
 
 Alter `pickup_time`, `distance` and `duration` to the correct data type
+
+~~~~sql
 ALTER TABLE runner_orders_temp ALTER COLUMN pickup_time TYPE timestamp USING (pickup_time::timestamp);
 ALTER TABLE runner_orders_temp ALTER COLUMN distance TYPE numeric USING (distance::numeric);
 ALTER TABLE runner_orders_temp ALTER COLUMN duration TYPE numeric USING (duration::numeric);
+~~~~
 
+#### Output new temporary table:
 ![runner after](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/32a8eb36-a6e6-418a-b966-c6a2b9b53b8a)
+
 
 ![cs2 aq1](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/171a5c9a-94fa-476c-9e08-9e4d2f9c57a0)
 
