@@ -61,18 +61,43 @@ ALTER TABLE runner_orders_temp ALTER COLUMN duration TYPE numeric USING (duratio
 #### Output new temporary table:
 ![runner after](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/32a8eb36-a6e6-418a-b966-c6a2b9b53b8a)
 
-
+## Question and Solution
+## A. Pizza Metrics
+### 1. How many pizzas were ordered?
+~~~~sql
+SELECT COUNT(*) AS number_pizza_order
+FROM Customer_orders_temp
+~~~~
+### Output:
 ![cs2 aq1](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/171a5c9a-94fa-476c-9e08-9e4d2f9c57a0)
 
-![cs2 aq2](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/fd5a6faf-6fe7-4618-92c1-bdc7d89de1ab)
+Total of 14 pizzas were ordered
 
+~~~~sql
+
+~~~~
+### Output:
+![cs2 aq2](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/fd5a6faf-6fe7-4618-92c1-bdc7d89de1ab)
+~~~~sql
+
+~~~~
+### Output:
 ![cs2 aq3](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/16ac1dcd-f049-4909-b30f-119e0a294fac)
 
+~~~~sql
 
+~~~~
+### Output:
 ![cs2 aq4](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/6a07d428-48e8-47b9-b7e5-9319c49ffd40)
+~~~~sql
 
+~~~~
+### Output:
 ![cs2 aq5](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/8ed2e41a-6e8f-401c-b2fb-bf5635ebc5d1)
+~~~~sql
 
+~~~~
+### Output:
 ![cs2 aq6](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/b3d65af2-3647-4b5b-8d1e-b82fb20f99e1)
 ![cs2 aq7](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/8ab29a19-6c4a-4df6-8398-6d3708de7a1f)
 ![cs2 aq8](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/adcb641e-9d91-4d93-b2e0-f1a6f78be0e2)
