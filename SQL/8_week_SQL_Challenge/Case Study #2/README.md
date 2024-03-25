@@ -3,10 +3,10 @@
 
 ## 📖 Table of contents:
 
-* [Business task]
-* [Entity Relationship Diagram]
-* [Data Cleaning & Transformation]
-* [Question and Solution]
+* [Business task](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%232/README.md#business-task)
+* [Entity Relationship Diagram](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%232/README.md#entity-relationship-diagram)
+* [Data Cleaning & Transformation](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%232/README.md#-data-cleaning--transformation)
+* [Question and Solution](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%232/README.md#question-and-solution)
 
    *  [A. Pizza Metrics](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%232/README.md#a-pizza-metrics)
    *  [B. Runner and Customer Experience]
@@ -215,11 +215,20 @@ ORDER BY number_of_pizza DESC
 * There are 3 pizzas ordered on Saturday
 * There is 1 pizza ordered on Sunday
 
+## B. Runner and Customer Experience
 
+## C. Ingredient Optimisation
+
+## D. Pricing and Ratings
+
+## E. Bonus Questions	
 
 
 ~~~~sql
 
 ~~~~
 ### Output:
+
+
+
 
