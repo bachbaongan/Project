@@ -9,10 +9,10 @@
 * [Question and Solution](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%232/README.md#question-and-solution)
 
    *  [A. Pizza Metrics](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%232/README.md#a-pizza-metrics)
-   *  [B. Runner and Customer Experience]
-   *  [C. Ingredient Optimisation]
-   *  [D. Pricing and Ratings]
-   *  [E. Bonus Questions]  	
+   *  [B. Runner and Customer Experience](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%232/README.md#b-runner-and-customer-experience)
+   *  [C. Ingredient Optimisation](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%232/README.md#c-ingredient-optimisation)
+   *  [D. Pricing and Ratings](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%232/README.md#d-pricing-and-ratings)
+   *  [E. Bonus Questions](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%232/README.md#e-bonus-questions)  	
 
 ## Business task: 
 Danny is expanding his new Pizza Empire and at the same time, he wants to Uberize it, so Pizza Runner was launched!
