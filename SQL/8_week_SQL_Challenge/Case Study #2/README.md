@@ -16,7 +16,7 @@ Create a temporary table with all the columns and remove incorrect values
 ~~~~sql
 CREATE TEMP TABLE customer_orders_temp AS 
 SELECT order_id, customer_id, pizza_id, 
-CASE WHEN exclusions LIKE 'null' or exclusions ='' THEN null	-- Remove text 'null' and blank space and replace with null values
+CASE WHEN exclusions LIKE 'null' or exclusions ='' THEN null -- Remove text 'null' and blank space and replace with null values
 	 ELSE exclusions END as exclusions,
 CASE WHEN extras LIKE 'null' or extras='' THEN null -- Remove text 'null' and blank space and replace with null values
 	 ELSE extras END as extras,
