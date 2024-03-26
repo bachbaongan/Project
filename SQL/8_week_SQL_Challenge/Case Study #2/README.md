@@ -246,9 +246,9 @@ ORDER BY r.runner_id;
 ### Output:
 ![cs2 bq2](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/72560c92-d182-4496-8f38-66adaedd11d0)
 
-* It takes Runner 1 *16* minutes to pickup the order at the Pizza Runner HQ
-* It takes Runner 2 *24* minutes to pickup the order at the Pizza Runner HQ
-* It takes Runner 3 *10* minutes to pickup the order at the Pizza Runner HQ
+* It takes Runner 1 **16** minutes to pickup the order at the Pizza Runner HQ
+* It takes Runner 2 **24** minutes to pickup the order at the Pizza Runner HQ
+* It takes Runner 3 **10** minutes to pickup the order at the Pizza Runner HQ
 
 ### 3. Is there any relationship between the number of pizzas and how long the order takes to prepare?
 ~~~~sql
