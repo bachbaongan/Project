@@ -327,6 +327,7 @@ ORDER BY runner_id;
 * Runner 1 has a 100% successful delivery.
 * Runner 2 has a 75% successful delivery.
 * Runner 3 has a 50% successful delivery
+  
 It's inaccurate to solely attribute successful delivery to runners since order cancellations are beyond the runner's control
 
 ## C. Ingredient Optimisation
