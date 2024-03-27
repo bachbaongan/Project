@@ -31,22 +31,40 @@ GROUP BY cte.pizza_name;
 
 ![cs2 cq1c](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/206b4fb1-aa7a-40f9-9fab-b457814c4550)
 
-
-
+### 2. What was the most commonly added extra?
 ~~~~sql
 
 ~~~~
 ### Output:
 
 
-
+### 3. What was the most common exclusion?
 ~~~~sql
 
 ~~~~
 ### Output:
 
 
+### 4. Generate an order item for each record in the customers_orders table in the format of one of the following:
 
+* Meat Lovers
+* Meat Lovers - Exclude Beef
+* Meat Lovers - Extra Bacon
+* Meat Lovers - Exclude Cheese, Bacon - Extra Mushroom, Peppers
+  
+~~~~sql
+
+~~~~
+### Output:
+
+### 5. Generate an alphabetically ordered comma-separated ingredient list for each pizza order from the customer_orders table and add a 2x in front of any relevant ingredients
+For example: "Meat Lovers: 2xBacon, Beef, ... , Salami"
+~~~~sql
+
+~~~~
+### Output:
+
+### 6. What is the total quantity of each ingredient used in all delivered pizzas sorted by most frequent first?
 ~~~~sql
 
 ~~~~
