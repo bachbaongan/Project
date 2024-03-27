@@ -33,18 +33,34 @@ GROUP BY cte.pizza_name;
 
 ### 2. What was the most commonly added extra?
 ~~~~sql
-
+SELECT pt.topping_name, COUNT(sub.extra_topping_id) as topping_count
+FROM (
+	SELECT pizza_id, CAST(UNNEST(REGEXP_SPLIT_TO_ARRAY(extras,',')) AS INTEGER) as extra_topping_id 
+	FROM customer_orders_temp ) as sub
+JOIN pizza_runner.pizza_toppings pt ON pt.topping_id = sub.extra_topping_id
+GROUP BY pt.topping_name
+ORDER BY topping_count DESC;
 ~~~~
 ### Output:
+![cs2 cq2](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/489dfb3a-34a4-4498-a978-b886adf14cd8)
 
+* Bacon was the most commonly added extra
 
 ### 3. What was the most common exclusion?
 ~~~~sql
-
+SELECT pt.topping_name, COUNT(sub.extra_topping_id) as topping_count
+FROM (
+	SELECT pizza_id, CAST(UNNEST(REGEXP_SPLIT_TO_ARRAY(extras,',')) AS INTEGER) as extra_topping_id 
+	FROM customer_orders_temp ) as sub
+JOIN pizza_runner.pizza_toppings pt ON pt.topping_id = sub.extra_topping_id
+GROUP BY pt.topping_name
+ORDER BY topping_count DESC;
 ~~~~
 ### Output:
+![cs2 cq3](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/b3994a58-1f51-4c9c-a1dc-89e70d7dceb4)
 
-
+* Cheese was the most common exclusion
+  
 ### 4. Generate an order item for each record in the customers_orders table in the format of one of the following:
 
 * Meat Lovers
