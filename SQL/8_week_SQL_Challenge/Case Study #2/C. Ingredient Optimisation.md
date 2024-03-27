@@ -20,14 +20,19 @@ FROM pizza_recipes_temp as prt
 JOIN pizza_runner.pizza_names as pn ON prt.pizza_id = pn.pizza_id
 JOIN pizza_runner.pizza_toppings as pt ON pt.topping_id = prt.topping_id 
 )
--- COMBINE topping name to hhave standard recipes for each type of pizza
+-- COMBINE topping name to have standard recipes for each type of pizza
 SELECT cte.pizza_name, string_agg(topping_name,', ') as standard_topping
 -- STRING_AGG(expression, delimiter): non-null input values concatenated into a string, separated by delimiter
 FROM CTE
 GROUP BY cte.pizza_name;
 ~~~~
 ### Output:
+
+#### Topping name for each pizza type
+
 ![cs2 cq1b](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/206e7f68-d257-49e7-a923-ebc722a9f829)
+
+#### Standard recipes for each type of pizza
 
 ![cs2 cq1c](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/206b4fb1-aa7a-40f9-9fab-b457814c4550)
 
