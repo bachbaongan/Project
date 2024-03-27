@@ -28,11 +28,11 @@ GROUP BY cte.pizza_name;
 ~~~~
 ### Output:
 
-#### Topping name for each pizza type
+##### Topping name for each pizza type
 
 ![cs2 cq1b](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/206e7f68-d257-49e7-a923-ebc722a9f829)
 
-#### Standard recipes for each type of pizza
+##### Standard recipes for each type of pizza
 
 ![cs2 cq1c](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/206b4fb1-aa7a-40f9-9fab-b457814c4550)
 
@@ -66,17 +66,92 @@ ORDER BY topping_count DESC;
 
 * Cheese was the most common exclusion
   
-### 4. Generate an order item for each record in the customers_orders table in the format of one of the following:
+### 4. Generate an order item for each record in the `customers_orders` table in the format of one of the following:
 
 * Meat Lovers
 * Meat Lovers - Exclude Beef
 * Meat Lovers - Extra Bacon
 * Meat Lovers - Exclude Cheese, Bacon - Extra Mushroom, Peppers
-  
-~~~~sql
 
+#### Create a temporary table `Order_item_note` containing exclusions and extra notes for each pizza/order 
+~~~~sql
+CREATE TEMP TABLE Order_item_note AS (
+-- Exclusion Notes Table		
+SELECT cte.order_id, cte.pizza_id, cte.pizza_name, 
+string_agg(CAST(cte.exclusion_topping_id AS VARCHAR),', ') as exclusions,
+null as extras,
+CONCAT('Exclude ',(string_agg(cte.topping_name,', '))) as note
+FROM (
+	SELECT sub.order_id, sub.pizza_id, sub.pizza_name, sub.exclusion_topping_id, pt.topping_name,
+	COUNT(DISTINCT sub.exclusion_topping_id) as cnt
+	FROM (
+		SELECT c.order_id, c.pizza_id, pn.pizza_name, 
+		CAST(UNNEST(REGEXP_SPLIT_TO_ARRAY(exclusions,',')) AS INTEGER) as exclusion_topping_id
+		FROM customer_orders_temp as c
+		JOIN pizza_runner.pizza_names as pn ON c.pizza_id = pn.pizza_id )as sub
+	JOIN pizza_runner.pizza_toppings pt ON pt.topping_id = sub.exclusion_topping_id
+	GROUP BY sub.order_id, sub.pizza_id, sub.exclusion_topping_id,sub.pizza_name, pt.topping_name
+	ORDER BY sub.order_id, sub.pizza_id) as cte
+GROUP BY cte.order_id, cte.pizza_id, cte.pizza_name
+
+UNION ALL
+-- Extra Notes Table
+SELECT cte.order_id, cte.pizza_id, cte.pizza_name, 
+null as exclusions,
+string_agg(CAST(cte.extra_topping_id AS VARCHAR),', ') as extras,
+CONCAT('Extra ',(string_agg(cte.topping_name,', '))) as note
+FROM (
+	SELECT sub.order_id, sub.pizza_id, sub.pizza_name, sub.extra_topping_id, pt.topping_name,
+	COUNT(DISTINCT sub.extra_topping_id) as cnt
+	FROM (
+		SELECT c.order_id, c.pizza_id, pn.pizza_name, 
+		CAST(UNNEST(REGEXP_SPLIT_TO_ARRAY(extras,',')) AS INTEGER) as extra_topping_id
+		FROM customer_orders_temp as c
+		JOIN pizza_runner.pizza_names as pn ON c.pizza_id = pn.pizza_id )as sub
+	JOIN pizza_runner.pizza_toppings pt ON pt.topping_id = sub.extra_topping_id
+	GROUP BY sub.order_id, sub.pizza_id, sub.extra_topping_id,sub.pizza_name, pt.topping_name
+	ORDER BY sub.order_id, sub.pizza_id) as cte
+GROUP BY cte.order_id, cte.pizza_id, cte.pizza_name);
 ~~~~
 ### Output:
+
+##### Exclusion Notes Table
+![cs2 cq4 a](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/c7e63c06-dec5-47ef-92bc-cbb2a202c379)
+
+##### Extra Notes Table
+![cs2 cq4b](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/4c73e701-9f19-46c2-b537-6230b2823a77)
+
+##### Order_item_note Table
+![cs2 cq4c](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/e1c9b33e-623a-42fa-8bf6-307eb3521690)
+
+#### Combine all the information requested to `customer_orders`
+~~~~sql
+WITH special_note AS (
+SELECT order_id, pizza_id, pizza_name,
+STRING_AGG(exclusions,'') as exclusions,
+STRING_AGG(extras,'') as extras,
+CONCAT(pizza_name, ' - ', (string_agg(note, ' - '))) as order_item
+FROM Order_item_note
+GROUP BY order_id, pizza_id, pizza_name
+ORDER BY order_id, pizza_id
+)
+SELECT c.order_id, c.pizza_id, pn.pizza_name,c.exclusions, c.extras, 
+CASE WHEN c.exclusions IS NULL AND c.extras IS NULL THEN pn.pizza_name
+ELSE special_note.order_item END as order_item
+FROM customer_orders_temp c
+JOIN pizza_runner.pizza_names as pn ON pn.pizza_id = c.pizza_id
+LEFT JOIN special_note 
+ON special_note.order_id = c.order_id 
+AND special_note.pizza_id = c.pizza_id
+AND (special_note.exclusions=c.exclusions
+OR special_note.extras = c.extras)
+ORDER BY c.ordeR_id, c.pizza_id;
+~~~~
+### Output:
+![cs2 cq4d](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/61297657-3c29-47c5-8902-9d949f9f18aa)
+
+
+
 
 ### 5. Generate an alphabetically ordered comma-separated ingredient list for each pizza order from the customer_orders table and add a 2x in front of any relevant ingredients
 For example: "Meat Lovers: 2xBacon, Beef, ... , Salami"
