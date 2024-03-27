@@ -28,6 +28,7 @@ GROUP BY cte.pizza_name;
 ~~~~
 ### Output:
 ![cs2 cq1b](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/206e7f68-d257-49e7-a923-ebc722a9f829)
+
 ![cs2 cq1c](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/206b4fb1-aa7a-40f9-9fab-b457814c4550)
 
 
