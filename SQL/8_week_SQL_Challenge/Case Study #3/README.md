@@ -20,9 +20,31 @@ Danny started by recruiting “runners” to deliver fresh pizza from Pizza Runn
 ## Entity Relationship Diagram
 ![case-study-3-erd](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/4b72fbc2-4a43-4510-ac8d-38028b734fb9)
 
+### Table 1: Plans
+Customers can choose which plans to join Foodie-Fi when they first sign up.
+
+* Basic plan customers have limited access and can only stream their videos and is only available monthly at $9.90
+* Pro plan customers have no watch time limits and can download videos for offline viewing.
+* Pro plans start at $19.90 a month or $199 for an annual subscription.
+  
+Customers can sign up for an initial 7-day free trial and will automatically continue with the pro monthly subscription plan unless they cancel, downgrade to basic or upgrade to an annual pro plan at any point during the trial.
+
+When customers cancel their Foodie-Fi service - they will have a churn plan record with a null price but their plan will continue until the end of the billing period.
+<img width="315" alt="Screenshot 2024-03-28 at 4 33 31 PM" src="https://github.com/bachbaongan/Portfolio_Data/assets/144385168/9d60736d-7ae2-4e4d-8dda-99c1bdf047b5">
+
+### Table 2: Subscriptions
+Customer subscriptions show the **exact date** when their specific `plan_id` starts.
+
+If customers downgrade from a pro plan or cancel their subscription - the higher plan will remain in place until the period is over - the `start_date` in the subscriptions table will reflect the date that the actual plan changes.
+
+When customers upgrade their account from a basic plan to a pro or annual pro plan - the higher plan will take effect straight away.
+
+When customers churn - they will keep their access until the end of their current billing period but the `start_date` will be technically the day they decide to cancel their service.
+<img width="364" alt="Screenshot 2024-03-28 at 4 33 48 PM" src="https://github.com/bachbaongan/Portfolio_Data/assets/144385168/7953778a-e523-469f-a6ed-7277c6426a9e">
+
 ## Question and Solution
 ## A. Customer Journey
-### Based off the 8 sample customers provided in the sample from the subscriptions table, write a brief description about each customer’s onboarding journey.
+### Based on the 8 sample customers provided in the sample from the subscriptions table, write a brief description about each customer’s onboarding journey.
 
 Try to keep it as short as possible - you may also want to run some sort of join to make your explanations a bit easier!
 ~~~~sql
@@ -43,7 +65,7 @@ Try to keep it as short as possible - you may also want to run some sort of join
 ~~~~
 #### Output:
 
-### 3. What plan `start_date` values occur after the year 2020 for our dataset? Show the breakdown by count of events for each `plan_name`
+### 3. What plan `start_date` values occur after the year 2020 for our dataset? Show the breakdown by a count of events for each `plan_name`
 ~~~~sql
 
 ~~~~
