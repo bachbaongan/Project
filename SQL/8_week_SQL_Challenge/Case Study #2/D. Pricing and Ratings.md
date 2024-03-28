@@ -76,12 +76,35 @@ FROM final_income;
 
 ### 3. The Pizza Runner team now wants to add an additional ratings system that allows customers to rate their runner, how would you design an additional table for this new dataset - generate a schema for this new table and insert your own data for ratings for each successful customer order between 1 to 5.
 ~~~~sql
-
+SET
+  search_path = pizza_runner;
+DROP TABLE IF EXISTS runner_rating;
+CREATE TABLE runner_rating AS (
+    "id" SERIAL PRIMARY KEY,
+    "order_id" INTEGER,
+    "customer_id" INTEGER,
+    "runner_id" INTEGER,
+    "rating" INTEGER,
+    "rating_time" TIMESTAMP
+  );
+INSERT INTO
+  runner_rating (
+    "order_id",
+    "customer_id",
+    "runner_id",
+    "rating",
+    "rating_time"
+  )
+VALUES
+  ('1', '101', '1', '5', '2021-01-01 19:33:53'),
+  ('2', '101', '1', '4', '2021-01-01 20:25:12'),
+  ('3', '102', '1', '4', '2021-01-03 10:14:51'),
+  ('4', '103', '2', '3', '2021-01-04 16:46:25'),
+  ('5', '104', '3', '5', '2021-01-08 23:08:44'),
+  ('7', '105', '2', '2', '2021-01-08 23:53:35'),
+  ('8', '102', '2', '3', '2021-01-10 12:34:26'),
+  ('10', '104', '1', '5', '2021-01-11 20:02:35');
 ~~~~
-### Output:
-
-
-
 
 ### 4. Using your newly generated table - can you join all of the information together to form a table which has the following information for successful deliveries?
 
