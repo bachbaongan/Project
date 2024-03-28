@@ -1,9 +1,32 @@
 ## D. Pricing and Ratings
-### 1. If a Meat Lovers pizza costs $12 and Vegetarian costs $10 and there were no charges for changes - how much money has Pizza Runner made so far if there are no delivery fees?
+### 1. If a Meat Lovers pizza costs $12 and a Vegetarian costs $10 and there were no charges for changes - how much money has Pizza Runner made so far if there are no delivery fees?
 ~~~~sql
-
+WITH sub as (
+SELECT r.runner_id, 
+CASE WHEN pn.pizza_name = 'Meatlovers' THEN COUNT(r.order_id) * 12 ELSE COUNT(r.order_id) *10 END as total_income
+FROM runner_orders_temp r
+JOIN customer_orders_temp c ON r.order_id = c.order_id
+JOIN pizza_runner.pizza_names pn ON c.pizza_id = pn.pizza_id
+WHERE r.distance!=0
+GROUP BY r.runner_id, pn.pizza_name
+ORDER BY r.runner_id
+)
+,runner_income AS (
+	-- Each Runner Income Table
+SELECT sub.runner_id, sum(total_income) as total_income
+FROM SUB
+GROUP BY sub.runner_id
+)
+	-- Total Runner Income Table
+SELECT SUM(total_income) as total_runner_income
+FROM runner_income
 ~~~~
 ### Output:
+#### Each Runner Income Table
+![Screenshot 2024-03-28 at 2 30 09 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/4ddb3049-b0ce-46a6-b0e1-250e9f580792)
+
+#### Total Runner Income Table
+![Screenshot 2024-03-28 at 2 31 19 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/83903791-8045-4c51-8f01-020b8520e712)
 
 ### 2. What if there was an additional $1 charge for any pizza extras? Add cheese is $1 extra
 ~~~~sql
