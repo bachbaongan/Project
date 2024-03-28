@@ -779,12 +779,26 @@ FROM final_income;
 
 
 ## E. Bonus Questions	
-
-
+### If Danny wants to expand his range of pizzas - how would this impact the existing data design? Write an INSERT statement to demonstrate what would happen if a new Supreme pizza with all the toppings was added to the Pizza Runner menu.
 ~~~~sql
-
+INSERT INTO
+  pizza_runner.pizza_names ("pizza_id", "pizza_name")
+VALUES
+  (3, 'Supreme');
+INSERT INTO
+  pizza_runner.pizza_recipes ("pizza_id", "toppings")
+VALUES
+  (3, '1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12');
+~~~~
+New Pizza Range and Menu
+~~~~sql
+SELECT *
+FROM
+  pizza_runner.pizza_names AS pn
+  JOIN pizza_runner.pizza_recipes AS pr ON pn.pizza_id = pr.pizza_id
 ~~~~
 ### Output:
+![Screenshot 2024-03-28 at 4 01 18 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/d00614d0-fdf1-476a-bb41-bbf2107e8a9b)
 
 
 
