@@ -187,9 +187,44 @@ ORDER BY sub.row;
 ### 5. Generate an alphabetically ordered comma-separated ingredient list for each pizza order from the customer_orders table and add a 2x in front of any relevant ingredients
 For example: "Meat Lovers: 2xBacon, Beef, ... , Salami"
 ~~~~sql
-
+WITH row_add AS (
+SELECT *, ROW_NUMBER () OVER () as row
+FROm customer_orders_temp
+)
+, sub AS (
+SELECT row, ra.order_id, pn.pizza_name,pt.topping_name,
+CASE WHEN ra.exclusions is not null 
+	 AND pt.topping_id  IN ( SELECT CAST(UNNEST(REGEXP_SPLIT_TO_ARRAY(ra.exclusions,',')) AS INTEGER)) 
+	 THEN 0 ELSE 
+		CASE WHEN pt.topping_id  IN ( SELECT CAST(UNNEST(REGEXP_SPLIT_TO_ARRAY(pr.toppings,',')) AS INTEGER)) 
+		THEN COUNT(pt.topping_name) ELSE 0 END 
+END AS count_topping,
+CASE WHEN ra.extras is not null 
+AND pt.topping_id  IN ( SELECT CAST(UNNEST(REGEXP_SPLIT_TO_ARRAY(ra.extras,',')) AS INTEGER)) 
+THEN COUNT(pt.topping_name) ELSE 0 END AS count_extra
+FROM row_add as ra,
+pizza_runner.pizza_toppings as pt,
+pizza_runner.pizza_recipes as pr
+JOIN pizza_runner.pizza_names as pn ON pr.pizza_id = pn.pizza_id
+WHERE ra.pizza_id = pn.pizza_id
+GROUP BY pn.pizza_name, ra.row, ra.order_id, ra.exclusions, ra.extras,pt.topping_id, pr.toppings,pt.topping_name
+)
+,final_ingredient  AS (
+SELECT sub.row, sub.order_id, sub.pizza_name, 
+CONCAT(CASE WHEN (SUM(sub.count_topping)+SUM(count_extra))>1 THEN (SUM(sub.count_topping)+SUM(count_extra))||'x' END,
+	   topping_name) AS topping_name
+FROM sub
+WHERE count_topping>0 OR count_extra>0
+GROUP BY sub.pizza_name, sub.row, sub.order_id, sub.topping_name
+)
+SELECT fn.order_id, 
+CONCAT(fn.pizza_name,': ', STRING_AGG(fn.topping_name,', ' ORDER BY fn.topping_name)) AS all_ingredients
+FROM final_ingredient as fn
+GROUP BY fn.pizza_name, fn.row, fn.order_id
+ORDER BY fn.row;
 ~~~~
 ### Output:
+![Screenshot 2024-03-28 at 12 34 10 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/2cc5b3b3-0cf2-4257-97ab-577fe57361b1)
 
 ### 6. What is the total quantity of each ingredient used in all delivered pizzas sorted by most frequent first?
 ~~~~sql
