@@ -49,6 +49,8 @@ When customers churn - they will keep their access until the end of their curren
 ### Based on the 8 sample customers provided in the sample from the subscriptions table, write a brief description about each customer’s onboarding journey.
 
 Try to keep it as short as possible - you may also want to run some sort of join to make your explanations a bit easier!
+![Screenshot 2024-03-28 at 4 40 33 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/89780832-7389-4a62-895d-5ec7421241d0)
+
 ~~~~sql
 
 ~~~~
