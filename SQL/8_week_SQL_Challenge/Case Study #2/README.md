@@ -482,7 +482,7 @@ ORDER BY c.ordeR_id, c.pizza_id;
 ### Output:
 ![cs2 cq4d](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/61297657-3c29-47c5-8902-9d949f9f18aa)
 
-### Another way faster to solve the question
+### ⭐ Another way faster to solve the question
 ~~~~sql
 WITH row_add AS (
 --To keep the original order of all rows in the table
