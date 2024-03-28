@@ -19,7 +19,7 @@ GROUP BY sub.runner_id
 )
 	-- Total Runner Income Table
 SELECT SUM(total_income) as total_runner_income
-FROM runner_income
+FROM runner_income;
 ~~~~
 ### Output:
 #### Each Runner Income Table
