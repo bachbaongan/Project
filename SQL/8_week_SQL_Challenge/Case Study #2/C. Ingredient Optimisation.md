@@ -228,6 +228,35 @@ ORDER BY fn.row;
 
 ### 6. What is the total quantity of each ingredient used in all delivered pizzas sorted by most frequent first?
 ~~~~sql
-
+WITH row_add AS (
+SELECT c.*, ROW_NUMBER () OVER () as row
+FROm customer_orders_temp c
+JOIN runner_orders_temp r ON  c.order_id=r.order_id
+WHERE distance !=0
+)
+, SUB AS (
+SELECT row, ra.order_id, pn.pizza_name,pt.topping_name,
+CASE WHEN ra.exclusions is not null 
+	 AND pt.topping_id  IN ( SELECT CAST(UNNEST(REGEXP_SPLIT_TO_ARRAY(ra.exclusions,',')) AS INTEGER)) 
+	 THEN 0 ELSE 
+		CASE WHEN pt.topping_id  IN ( SELECT CAST(UNNEST(REGEXP_SPLIT_TO_ARRAY(pr.toppings,',')) AS INTEGER)) 
+		THEN COUNT(pt.topping_name) ELSE 0 END 
+END AS count_topping,
+CASE WHEN ra.extras is not null 
+AND pt.topping_id  IN ( SELECT CAST(UNNEST(REGEXP_SPLIT_TO_ARRAY(ra.extras,',')) AS INTEGER)) 
+THEN COUNT(pt.topping_name) ELSE 0 END AS count_extra
+FROM row_add as ra,
+pizza_runner.pizza_toppings as pt,
+pizza_runner.pizza_recipes as pr
+JOIN pizza_runner.pizza_names as pn ON pr.pizza_id = pn.pizza_id
+WHERE ra.pizza_id = pn.pizza_id
+GROUP BY pn.pizza_name, ra.row, ra.order_id, ra.exclusions, ra.extras,pt.topping_id, pr.toppings,pt.topping_name
+)
+SELECT sub.topping_name,
+(SUM(sub.count_topping)+SUM(count_extra)) as ingredient_amount
+FROM sub
+GROUP BY sub.topping_name
+ORDER BY ingredient_amount DESC;
 ~~~~
 ### Output:
+![Screenshot 2024-03-28 at 12 43 54 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/16104ae0-df88-4e68-a23d-977e7ac4a8cb)
