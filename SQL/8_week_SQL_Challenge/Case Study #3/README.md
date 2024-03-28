@@ -7,10 +7,10 @@
 * [Entity Relationship Diagram](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%233/README.md#entity-relationship-diagram)
 * [Question and Solution](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%233/README.md#question-and-solution)
 
-  * A. Customer Journey
-  * B. Data Analysis Questions
-  * C. Challenge Payment Question
-  * D. Outside The Box Questions
+  * [A. Customer Journey](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%233/README.md#a-customer-journey) 
+  * [B. Data Analysis Questions]()
+  * [C. Challenge Payment Question]()
+  * [D. Outside The Box Questions]()
     
 ## Business task: 
 Danny is expanding his new Pizza Empire and at the same time, he wants to Uberize it, so Pizza Runner was launched!
