@@ -79,7 +79,7 @@ FROM final_income;
 SET
   search_path = pizza_runner;
 DROP TABLE IF EXISTS runner_rating;
-CREATE TABLE runner_rating AS (
+CREATE TABLE runner_rating (
     "id" SERIAL PRIMARY KEY,
     "order_id" INTEGER,
     "customer_id" INTEGER,
