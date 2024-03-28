@@ -150,7 +150,38 @@ ORDER BY c.ordeR_id, c.pizza_id;
 ### Output:
 ![cs2 cq4d](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/61297657-3c29-47c5-8902-9d949f9f18aa)
 
-
+### Another way faster to solve the question
+~~~~sql
+WITH row_add AS (
+--To keep the original order of all rows in the table
+SELECT *, ROW_NUMBER () OVER () as row 
+FROm customer_orders_temp
+)
+, sub as (
+-- Find the name of exclusion and extra toping for each order/pizza
+SELECT row, ra.order_id, pn.pizza_name, --
+CASE WHEN ra.exclusions is not null 
+AND pt.topping_id  IN ( SELECT CAST(UNNEST(REGEXP_SPLIT_TO_ARRAY(ra.exclusions,',')) AS INTEGER)) 
+THEN pt.topping_name END AS exclusions,
+CASE WHEN ra.extras is not null 
+AND pt.topping_id  IN ( SELECT CAST(UNNEST(REGEXP_SPLIT_TO_ARRAY(ra.extras,',')) AS INTEGER)) 
+THEN pt.topping_name END AS extras												
+FROM pizza_runner.pizza_toppings as pt,
+row_add as ra
+JOIN pizza_runner.pizza_names as pn ON ra.pizza_id = pn.pizza_id
+)
+-- Convert and combine all the Exclusion and Extra to string to get final output
+SELECT sub.order_id, 
+CONCAT(sub.pizza_name,'', 
+	  CASE WHEN COUNT(sub.exclusions)>0 THEN ' - Exclude' ELSE '' END, STRING_AGG(sub.exclusions,', '),
+	  CASE WHEN COUNT(sub.extras)>0 THEN ' - Extra' ELSE '' END, STRING_AGG(sub.extras,', ')
+	  ) AS pizza_order_items_note
+FROM sub
+GROUP BY sub.order_id, sub.pizza_name, sub.row
+ORDER BY sub.row;
+~~~~
+### Output:
+![Screenshot 2024-03-28 at 11 25 16 AM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/33fba57a-053e-4041-aea1-9000b3487882)
 
 
 ### 5. Generate an alphabetically ordered comma-separated ingredient list for each pizza order from the customer_orders table and add a 2x in front of any relevant ingredients
