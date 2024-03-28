@@ -9,7 +9,7 @@
 
   * [A. Customer Journey](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%233/README.md#a-customer-journey) 
   * [B. Data Analysis Questions](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%233/README.md#b-data-analysis-questions)
-  * [C. Challenge Payment Question]()
+  * [C. Challenge Payment Question](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%233/README.md#c-challenge-payment-question)
   * [D. Outside The Box Questions]()
     
 ## Business task: 
