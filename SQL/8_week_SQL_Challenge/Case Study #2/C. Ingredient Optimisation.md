@@ -173,8 +173,8 @@ JOIN pizza_runner.pizza_names as pn ON ra.pizza_id = pn.pizza_id
 -- Convert and combine all the Exclusion and Extra to string to get final output
 SELECT sub.order_id, 
 CONCAT(sub.pizza_name,'', 
-	  CASE WHEN COUNT(sub.exclusions)>0 THEN ' - Exclude' ELSE '' END, STRING_AGG(sub.exclusions,', '),
-	  CASE WHEN COUNT(sub.extras)>0 THEN ' - Extra' ELSE '' END, STRING_AGG(sub.extras,', ')
+	  CASE WHEN COUNT(sub.exclusions)>0 THEN ' - Exclude ' ELSE '' END, STRING_AGG(sub.exclusions,', '),
+	  CASE WHEN COUNT(sub.extras)>0 THEN ' - Extra ' ELSE '' END, STRING_AGG(sub.extras,', ')
 	  ) AS pizza_order_items_note
 FROM sub
 GROUP BY sub.order_id, sub.pizza_name, sub.row
