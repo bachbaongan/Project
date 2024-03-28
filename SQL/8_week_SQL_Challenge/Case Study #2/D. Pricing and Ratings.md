@@ -48,11 +48,11 @@ GROUP BY sub.runner_id
 ,runner_extra AS (
 SELECT e.runner_id, COUNT(e.order_id) as total_extras
 FROM (
-		SELECT r.*, CAST(UNNEST(REGEXP_SPLIT_TO_ARRAY(c.extras,',')) AS INTEGER)
-		FROM customer_orders_temp c
-		JOIN runner_orders_temp r ON r.order_id = c.order_id
-		WHERE r.distance!=0
-		AND c.extras IS NOT NULL
+	SELECT r.*, CAST(UNNEST(REGEXP_SPLIT_TO_ARRAY(c.extras,',')) AS INTEGER)
+	FROM customer_orders_temp c
+	JOIN runner_orders_temp r ON r.order_id = c.order_id
+	WHERE r.distance!=0
+	AND c.extras IS NOT NULL
 	) e
 GROUP BY e.runner_id
 )
