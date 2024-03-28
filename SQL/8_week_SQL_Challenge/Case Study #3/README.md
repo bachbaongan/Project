@@ -13,9 +13,9 @@
   * [D. Outside The Box Questions](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%233/README.md#d-outside-the-box-questions)
     
 ## Business task: 
-Danny is expanding his new Pizza Empire and at the same time, he wants to Uberize it, so Pizza Runner was launched!
+Danny and his friends launched a new startup Foodie-Fi and started selling monthly and annual subscriptions, giving their customers unlimited on-demand access to exclusive food videos from around the world.
 
-Danny started by recruiting “runners” to deliver fresh pizza from Pizza Runner Headquarters (otherwise known as Danny’s house) and also maxed out his credit card to pay freelance developers to build a mobile app to accept orders from customers.
+This case study focuses on using subscription style digital data to answer important business questions on customer journey, payments, and business performances.
 
 ## Entity Relationship Diagram
 ![case-study-3-erd](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/4b72fbc2-4a43-4510-ac8d-38028b734fb9)
