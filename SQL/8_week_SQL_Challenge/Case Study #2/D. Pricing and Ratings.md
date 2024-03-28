@@ -120,9 +120,20 @@ VALUES
 * Total number of pizzas
 
 ~~~~sql
-
+SELECT c.customer_id, c.order_id, r.runner_id, rr.rating, c.order_time, r.pickup_time, 
+r.pickup_time-c.order_time as time_between_order_pickup, 
+r.duration as delivery_duration, 
+ROUND(AVG(r.distance/(r.duration/60)),2) as average_speed,
+COUNT(c.pizza_id) as total_number_pizza
+FROM runner_rating rr
+JOIN runner_orders_temp r on rr.runner_id =r.runner_id
+JOIN customer_orders_temp c ON c.order_id = r.order_id
+WHERE r.duration !=0
+GROUP BY c.customer_id, c.order_id, r.runner_id, rr.rating, c.order_time, r.pickup_time,r.duration 
+ORDER BY c.customer_id
 ~~~~
 ### Output:
+![Screenshot 2024-03-28 at 3 13 23 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/26cd7b8b-e8b2-4dad-bb55-941dd5cbb999)
 
 
 ### 5. If a Meat Lovers pizza was $12 and Vegetarian $10 fixed prices with no cost for extras and each runner is paid $0.30 per kilometre traveled - how much money does Pizza Runner have left over after these deliveries?
