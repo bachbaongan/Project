@@ -138,6 +138,47 @@ ORDER BY c.customer_id
 
 ### 5. If a Meat Lovers pizza was $12 and Vegetarian $10 fixed prices with no cost for extras and each runner is paid $0.30 per kilometre traveled - how much money does Pizza Runner have left over after these deliveries?
 ~~~~sql
-
+WITH sub as (
+SELECT r.runner_id, 
+CASE WHEN pn.pizza_name = 'Meatlovers' THEN COUNT(r.order_id) * 12 ELSE COUNT(r.order_id) *10 END as total_income
+FROM runner_orders_temp r
+JOIN customer_orders_temp c ON r.order_id = c.order_id
+JOIN pizza_runner.pizza_names pn ON c.pizza_id = pn.pizza_id
+WHERE r.distance!=0
+GROUP BY r.runner_id, pn.pizza_name
+ORDER BY r.runner_id
+)
+,runner_income AS (
+SELECT sub.runner_id, sum(total_income) as total_income
+FROM SUB
+GROUP BY sub.runner_id
+)
+,runner_km_paid AS (
+SELECT rp.runner_id,sum(rp.runner_km_paid) as total_runner_km_paid
+FROM (
+		SELECT r.*, r.distance*0.3 as runner_km_paid
+		FROM customer_orders_temp c
+		JOIN runner_orders_temp r ON r.order_id = c.order_id
+		WHERE r.distance!=0
+		
+	) rp
+GROUP BY rp.runner_id
+)
+,final_income AS (
+	-- Total Income after km paid for each runner
+SELECT ri.runner_id, ri.total_income, rkp.total_runner_km_paid,sum(ri.total_income) - sum(rkp.total_runner_km_paid) as total_income_after_km_paid
+FROM runner_income ri
+JOIN runner_km_paid rkp ON ri.runner_id=rkp.runner_id
+GROUP BY ri.runner_id, ri.total_income, rkp.total_runner_km_paid
+	)
+	-- Total Income after km paid for all runners
+SELECT sum(total_income_after_km_paid) as total_income_after_km_paid_all_runners
+FROM final_income;
 ~~~~
 ### Output:
+#### Total Income after km paid for each runner
+![Screenshot 2024-03-28 at 3 20 49 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/df5844fe-0f99-44d6-ab79-4dc8fce7c149)
+
+#### Total Income after km paid for all runners
+![Screenshot 2024-03-28 at 3 21 21 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/0dcff748-cb55-4b1a-9b99-673f4e9a2db6)
+
