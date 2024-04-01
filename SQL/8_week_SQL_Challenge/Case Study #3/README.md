@@ -315,31 +315,114 @@ WHERE sub.plan_id !=0;
 
 ### 1. How would you calculate the rate of growth for Foodie-Fi?
 ~~~~sql
-
+SELECT TO_CHAR(start_date,'YYYY-MM') as month_year,
+COUNT(DISTINCT customer_id) as current_customer,
+COUNT(DISTINCT customer_id) - LAG(COUNT(DISTINCT customer_id)) OVER (ORDER BY TO_CHAR(start_date,'YYYY-MM')) as number_customer_change,
+CONCAT(ROUND(
+	100.00*(COUNT(DISTINCT customer_id) - LAG(COUNT(DISTINCT customer_id)) OVER (ORDER BY TO_CHAR(start_date,'YYYY-MM')))
+	  /(LAG(COUNT(DISTINCT customer_id)) OVER (ORDER BY TO_CHAR(start_date,'YYYY-MM')))
+	  ,1),' %') as growth
+FROM foodie_fi.subscriptions
+WHERE plan_id NOT IN (0,4)
+GROUP BY TO_CHAR(start_date,'YYYY-MM')
+ORDER BY month_year;
 ~~~~
 #### Output:
+![Screenshot 2024-04-01 at 5 11 23 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/70c8df75-eada-4634-8b6e-d7cc79d8f3c3)
 
 ### 2. What key metrics would you recommend Foodie-Fi management to track over time to assess the performance of their overall business?
-~~~~sql
 
-~~~~
-#### Output:
-
+* Increase in Paid Membership
+* Growth in Revenue
+* Conversion Rate: Transition from Free Trial to Paid Membership
+* Churn Rate: Number of Customers Cancelling Monthly Subscriptions and Their Subscription Plans
+* Reasons for Churn
+  
 ### 3. What are some key customer journeys or experiences that you would analyze further to improve customer retention?
-~~~~sql
 
-~~~~
-#### Output:
-
+* Members who cancel their membership status
+* Members who downgrade their plan, why they do not want to pay as before
+* Members who upgrade their plan, what we can do to offer and keep more customers doing it
+  
 ### 4. If the Foodie-Fi team were to create an exit survey shown to customers who wish to cancel their subscription, what questions would you include in the survey?
-~~~~sql
+#### 1. How long have you been using Foodie-Fi? 
 
-~~~~
-#### Output:
+* Less than 1 Month
+* 1–3 Months
+* 3–6 Months
+* 6–9 Months
+* 9–12 Months
+* More than 12 Months
+
+#### 3. What made you cancel your subscription?
+* Price
+* Technical issues
+* Customer support
+* Found an alternative
+* Others (please specify)
+
+#### 4. What is something we could have done to prevent you from leaving? 
+#### 5. Did you consider any alternatives before cancelling? If yes, which ones?
+#### 6. Were there any product features that you expected but were not available?
+#### 7. How likely are you to use our product again in the future?
 
 #### 5. What business levers could the Foodie-Fi team use to reduce the customer churn rate? How would you validate the effectiveness of your ideas?
-~~~~sql
 
-~~~~
-#### Output:
+#### 1. Personalize Onboarding:
+
+* Strategy: Tailor the onboarding process for new customers to help them quickly understand and derive value from your service.
+* Validation:
+  
+  * Monitor user engagement during onboarding.
+  * Measure time to value (how quickly users achieve their desired outcomes).
+  * Analyze activation rates after personalized onboarding1.
+
+#### 2. Contextual In-App Guidance:
+ 
+* Strategy: Provide in-app guidance to assist users in navigating features and getting the most out of the platform.
+* Validation:
+
+  * Track feature adoption and usage.
+  * Observe whether users follow the guidance provided.
+  * Measure user satisfaction and success metrics1.
+
+#### 3. Proactive Customer Service:
+
+* Strategy: Anticipate user needs and address issues promptly.
+* Validation:
+  
+  * Monitor response times to customer inquiries.
+  * Collect feedback on customer service quality.
+  * Track user satisfaction post-interaction1.
+
+#### 4. Secondary Onboarding:
+
+* Strategy: Continue educating users beyond initial onboarding to unlock additional value.
+* Validation:
+
+   * Measure engagement with secondary onboarding content.
+  * Observe whether users explore advanced features.
+  * Assess retention rates among users who complete secondary onboarding1.
+#### 5. Gamification:
+
+* Strategy: Apply game-like elements (such as rewards, badges, or challenges) to enhance user engagement.
+* Validation:
+
+   * Monitor participation in gamified activities.
+  * Track user progress and achievements.
+  * Assess whether gamification positively impacts retention1.
+#### 6. Optimize Cancellation Flow:
+
+* Strategy: Make the cancellation process smooth and gather feedback during cancellation.
+* Validation:
+  * Analyze the cancellation flow to identify friction points.
+  * Collect reasons for cancellation.
+  * Measure changes in cancellation rates after improvements.
+
+#### To validate these strategies, Foodie-Fi can:
+
+* Track Metrics: Regularly review churn rate, customer satisfaction scores, Net Promoter Score (NPS), and customer lifetime value (CLV).
+* A/B Testing: Implement changes incrementally and compare outcomes using A/B tests.
+* User Surveys: Gather insights from churned customers through in-app surveys or post-cancellation emails.
+* Behavioral Analytics: Monitor user behaviour patterns to predict churn and assess the impact of implemented strategies
 
