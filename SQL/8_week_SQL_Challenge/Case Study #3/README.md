@@ -141,10 +141,25 @@ WHERE p.plan_name ='churn'
 
 ### 5. How many customers have churned straight after their initial free trial - what percentage is this rounded to the nearest whole number?
 ~~~~sql
-
+WITH CTE AS (
+SELECT s.*, p.plan_name, 
+DENSE_RANK () OVER (PARTITION BY s.customer_id ORDER BY s.plan_id) as rank,
+s.start_date - LAG(s.start_date) OVER(PARTITION BY s.customer_id ORDER BY s.plan_id) as period --Inteval between trial and churn plan
+JOIN foodie_fi.plans p ON s.plan_id = p.plan_id
+WHERE p.plan_name IN ('churn', 'trial')
+ORDER BY s.customer_id
+)
+SELECT COUNT(cte.customer_id) as number_trial_churn_customer,
+ROUND(COUNT(cte.customer_id)/CAST((SELECT COUNT(DISTINCT customer_id) 
+				   FROM foodie_fi.subscriptions) as Numeric)*100,0) as percentage_trial_churn_customer
+FROM CTE
+WHERE cte.period =7 
+      AND rank =2;
 ~~~~
 #### Output:
+![Screenshot 2024-04-01 at 2 01 29 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/e9983985-9cb4-4e82-90e8-46eaf6aa394a)
 
+* Following the initial free trial period, a total of 92 customers churned, which accounts for roughly 9% of the entire customer base.
 ### 6. What is the number and percentage of customer plans after their initial free trial?
 ~~~~sql
 
