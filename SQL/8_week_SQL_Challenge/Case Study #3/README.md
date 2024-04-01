@@ -202,17 +202,33 @@ GROUP BY sub.plan_id, p.plan_name;
 
 ### 8. How many customers have upgraded to an annual plan in 2020?
 ~~~~sql
-
+SELECT COUNT(customer_id) as number_annual_plan_customer
+FROM foodie_fi.subscriptions
+WHERE plan_id = 3 --Pro annual plan has ID 3
+AND EXTRACT(YEAR from start_date) ='2020';
 ~~~~
 #### Output: 
+![Screenshot 2024-04-01 at 2 35 58 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/730deda7-5ce3-4803-840b-118373cc7869)
 
+* There are 195 customers upgraded to the pro annual plan in 2020
+  
 ### 9. How many days on average does it take for a customer to an annual plan from the day they join Foodie-Fi?
 ~~~~sql
-
+WITH sub as (
+SELECT *,
+MIN(start_date) OVER (PARTITION BY customer_id) as join_date
+FROM foodie_fi.subscriptions s
+)
+SELECT ROUND(AVG(start_date - join_date),0) as average_days_to_upgrade
+FROm sub
+WHERE plan_id = 3;
 ~~~~
 #### Output:
+![Screenshot 2024-04-01 at 2 51 52 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/4772d329-04da-4502-99c7-ead627ef3dc5)
 
-### 10. Can you further breakdown this average value into 30-day periods (i.e. 0-30 days, 31-60 days etc)
+* On average, customers take approximately 105 days from the day they join Foodie-Fi to upgrade to the pro annual plan.
+  
+### 10. Can you further break this average value into 30-day periods (i.e. 0-30 days, 31-60 days etc)
 ~~~~sql
 
 ~~~~
