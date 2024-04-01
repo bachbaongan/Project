@@ -280,9 +280,35 @@ WHERE plan_id = 1 AND previous_plan =2;
 customer_id|plan_id	|plan_name|	payment_date|	amount|	payment_order|
 ----|----|----|----|----|----
 ~~~~sql
-
+WITH sub As (
+SELECT s.customer_id, s.plan_id,
+LAG(s.plan_id) OVER (PARTITION BY s.customer_id ORDER BY s.plan_id) as previous_plan,
+p.plan_name,s.start_date,
+GENERATE_SERIES(s.start_date, 
+	CASE WHEN s.plan_id =3 THEN start_date 
+		 WHEN s.plan_id =4 THEN NULL
+		 WHEN LEAD(s.start_date) OVER (PARTITION BY s.customer_id ORDER BY s.start_date) IS NOT NULL 
+				THEN LEAD(s.start_date) OVER (PARTITION BY s.customer_id ORDER BY s.start_date)
+		 ELSE '2020-12-31' :: date
+		 END, '1 month' + '1 minute':: interval) as payment_date,
+p.price,
+LAG(p.price) OVER (PARTITION BY s.customer_id ORDER BY s.plan_id) as previous_price	
+FROM foodie_fi.subscriptions s
+JOIN foodie_fi.plans p ON p.plan_id= s.plan_id
+WHERE s.start_date <='2020-12-31'
+)
+SELECT sub.customer_id, sub.plan_id, sub.plan_name, sub.payment_date, 
+CASE WHEN sub.previous_plan != sub.plan_id 
+AND DATE_PART('day',sub.payment_date -LAG(sub.payment_date) OVER (PARTITION BY sub.customer_id ORDER BY sub.plan_id)) <30
+THEN sub.price-sub.previous_price ELSE price END as amount,
+RANK() OVER(PARTITION BY sub.customer_id ORDER BY sub.payment_date) as payment_order
+FROM sub
+WHERE sub.plan_id !=0;
 ~~~~
 #### Output:
+![Screenshot 2024-04-01 at 4 25 50 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/1e03c3df-325c-4162-9b4c-9e28be218ee7)
+![Screenshot 2024-04-01 at 4 26 26 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/91f43674-d1b7-4117-8fdc-f3c68aef85a5)
+![Screenshot 2024-04-01 at 4 26 53 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/eb789bd1-7e7f-4f3f-96c7-dc634c6142c0)
 
 ## D. Outside The Box Questions
 ### The following are open-ended questions which might be asked during a technical interview for this case study - there are no right or wrong answers, but answers that make sense from both a technical and a business perspective make an amazing impression!
