@@ -141,31 +141,45 @@ WHERE p.plan_name ='churn'
 
 ### 5. How many customers have churned straight after their initial free trial - what percentage is this rounded to the nearest whole number?
 ~~~~sql
-WITH CTE AS (
-SELECT s.*, p.plan_name, 
-DENSE_RANK () OVER (PARTITION BY s.customer_id ORDER BY s.plan_id) as rank,
-s.start_date - LAG(s.start_date) OVER(PARTITION BY s.customer_id ORDER BY s.plan_id) as period --Inteval between trial and churn plan
-JOIN foodie_fi.plans p ON s.plan_id = p.plan_id
-WHERE p.plan_name IN ('churn', 'trial')
-ORDER BY s.customer_id
-)
-SELECT COUNT(cte.customer_id) as number_trial_churn_customer,
-ROUND(COUNT(cte.customer_id)/CAST((SELECT COUNT(DISTINCT customer_id) 
-				   FROM foodie_fi.subscriptions) as Numeric)*100,0) as percentage_trial_churn_customer
-FROM CTE
-WHERE cte.period =7 
-      AND rank =2;
+WITH sub as (
+SELECT *, 
+LAG(plan_id) OVER (PARTITION BY customer_id) as previous_plan
+FROM foodie_fi.subscriptions
+) 
+SELECT p.plan_name, COUNT(sub.customer_id) as churned_customer,
+ROUND(COUNT(sub.customer_id)/ 
+	  CAST((SELECT COUNT(DISTINCT customer_id) 
+		    FROM foodie_fi.subscriptions) AS Numeric)*100,0) as percentage_trial_churn_customer
+FROM sub 
+JOIN foodie_fi.plans p ON p.plan_id = sub.plan_id
+WHERE previous_plan =0 AND p.plan_name = 'churn'
+GROUP BY p.plan_name;
 ~~~~
 #### Output:
-![Screenshot 2024-04-01 at 2 01 29 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/e9983985-9cb4-4e82-90e8-46eaf6aa394a)
+![Screenshot 2024-04-01 at 2 18 30 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/3ad33791-3ce9-4c19-92e4-504d112641e8)
+
 
 * Following the initial free trial period, a total of 92 customers churned, which accounts for roughly 9% of the entire customer base.
 ### 6. What is the number and percentage of customer plans after their initial free trial?
 ~~~~sql
-
+WITH sub as (
+SELECT *, 
+LAG(plan_id) OVER (PARTITION BY customer_id) as previous_plan
+FROM foodie_fi.subscriptions
+) 
+SELECT sub.plan_id, p.plan_name, COUNT(sub.customer_id) as planned_customer,
+ROUND(COUNT(sub.customer_id)/ CAST((SELECT COUNT(DISTINCT customer_id) 
+		    FROM foodie_fi.subscriptions) AS Numeric)*100,0) as percentage_planned_customer
+FROM sub  
+JOIN foodie_fi.plans p ON p.plan_id = sub.plan_id
+WHERE previous_plan =0 
+GROUP BY sub.plan_id, p.plan_name;
 ~~~~
 #### Output:
+![Screenshot 2024-04-01 at 2 20 24 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/4c6b951e-76d5-40a3-9311-a281b1e0e2de)
 
+* Over 80% of Foodie-Fi's customer base is subscribed to paid plans, with the majority favouring Plans 1 and 2. However, there is notable room for enhancement in customer acquisition strategies for Plan 3, as it attracts only a minimal percentage of customers despite being a higher-priced option.
+  
 ### 7. What is the customer count and percentage breakdown of all 5 `plan_name` values on `2020-12-31`?
 ~~~~sql
 
