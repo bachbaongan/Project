@@ -103,10 +103,16 @@ FROM foodie_fi.subscriptions;
 
 ### 2. What is the monthly distribution of `trial` plan `start_date` values for our dataset - use the start of the month as the group by value
 ~~~~sql
-
+SELECT EXTRACT(MONTH FROM s.start_date) as month,COUNT(distinct customer_id)
+FROM foodie_fi.subscriptions s
+WHERE s.plan_id = 0 --Trial plan has ID 0
+GROUP BY EXTRACT(MONTH FROM s.start_date) 
+ORDER BY month;
 ~~~~
 #### Output:
+![Screenshot 2024-04-01 at 11 32 30 AM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/08db08ed-03d1-4f39-98dc-bc5bb8d0e511)
 
+* March boasts the highest count of trial plans among all months, whereas February records the lowest
 ### 3. What plan `start_date` values occur after the year 2020 for our dataset? Show the breakdown by a count of events for each `plan_name`
 ~~~~sql
 
