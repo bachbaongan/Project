@@ -93,9 +93,13 @@ Customer 19: This customer started the free trial on June 06, 2020. Following th
 ## B. Data Analysis Questions
 ### 1. How many customers has Foodie-Fi ever had?
 ~~~~sql
-
+SELECT COUNT(DISTINCT customer_id) as number_customer
+FROM foodie_fi.subscriptions;
 ~~~~
 #### Output:
+![Screenshot 2024-04-01 at 10 43 01 AM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/d0802175-f101-488a-aba7-7481857a0054)
+
+* Foodie-Fi has had 1000 unique customers
 
 ### 2. What is the monthly distribution of `trial` plan `start_date` values for our dataset - use the start of the month as the group by value
 ~~~~sql
