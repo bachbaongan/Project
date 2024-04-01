@@ -15,7 +15,7 @@
 ## Business task: 
 Danny and his friends launched a new startup Foodie-Fi and started selling monthly and annual subscriptions, giving their customers unlimited on-demand access to exclusive food videos from around the world.
 
-This case study focuses on using subscription style digital data to answer important business questions on customer journey, payments, and business performances.
+This case study focuses on using subscription-style digital data to answer important business questions on customer journey, payments, and business performances.
 
 ## Entity Relationship Diagram
 ![case-study-3-erd](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/4b72fbc2-4a43-4510-ac8d-38028b734fb9)
@@ -25,7 +25,7 @@ Customers can choose which plans to join Foodie-Fi when they first sign up.
 
 * Basic plan customers have limited access and can only stream their videos and is only available monthly at $9.90
 * Pro plan customers have no watch time limits and can download videos for offline viewing.
-* Pro plans start at $19.90 a month or $199 for an annual subscription.
+* Pro plans start at $19.90 monthly or $199 for an annual subscription.
   
 Customers can sign up for an initial 7-day free trial and will automatically continue with the pro monthly subscription plan unless they cancel, downgrade to basic or upgrade to an annual pro plan at any point during the trial.
 
@@ -46,15 +46,49 @@ When customers churn - they will keep their access until the end of their curren
 
 ## Question and Solution
 ## A. Customer Journey
-### Based on the 8 sample customers provided in the sample from the subscriptions table, write a brief description about each customer’s onboarding journey.
+### Based on the 8 sample customers provided in the sample from the subscriptions table, write a brief description of each customer’s onboarding journey.
 
-Try to keep it as short as possible - you may also want to run some sort of join to make your explanations a bit easier!
+Try to keep it as short as possible - you may also want to run some join to make your explanations a bit easier!
 ![Screenshot 2024-03-28 at 4 40 33 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/89780832-7389-4a62-895d-5ec7421241d0)
+~~~~sql
+SELECT s.customer_id, s.plan_id, p.plan_name, s.start_date 
+FROM foodie_fi.subscriptions s
+JOIN foodie_fi.plans p ON s.plan_id = p.plan_id 
+WHERE customer_id IN (1,2,11,13,15,16,18,19)
+~~~~
+![Screenshot 2024-04-01 at 10 26 06 AM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/4fab1001-cbd8-4029-9bc3-3cc4271284bd)
+
+I choose 3 customers to show their onboarding journeys
 
 ~~~~sql
-
+SELECT s.customer_id, s.plan_id, p.plan_name, s.start_date 
+FROM foodie_fi.subscriptions s
+JOIN foodie_fi.plans p ON s.plan_id = p.plan_id 
+WHERE customer_id =1;
 ~~~~
-#### Output:
+![Screenshot 2024-04-01 at 10 27 05 AM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/fc450375-9ac6-4d47-adbb-308c3116ad9a)
+
+Customer 1: This customer started the free trial on August 1, 2020, then subscribed to the basic monthly plan on August 8 after the trial period ended.
+
+~~~~sql
+SELECT s.customer_id, s.plan_id, p.plan_name, s.start_date 
+FROM foodie_fi.subscriptions s
+JOIN foodie_fi.plans p ON s.plan_id = p.plan_id 
+WHERE customer_id =15;
+~~~~
+![Screenshot 2024-04-01 at 10 32 46 AM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/80cd5249-7189-48d3-af3b-cb395e7c91c6)
+
+Customer 15: This customer started the free trial on 17 March 2020, and then upgraded to the pro monthly plan after the trial period ended on March 24, 2020. However, the customer decided to terminate their subscription  on April 29, 2020 and subsequently churned until the paid subscription ended. 
+
+~~~~sql
+SELECT s.customer_id, s.plan_id, p.plan_name, s.start_date 
+FROM foodie_fi.subscriptions s
+JOIN foodie_fi.plans p ON s.plan_id = p.plan_id 
+WHERE customer_id =19;
+~~~~
+![Screenshot 2024-04-01 at 10 35 51 AM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/945b1944-492f-4c75-bbe7-d75c8b3ae564)
+
+Customer 19: This customer started the free trial on June 06, 2020. Following the trial period, on June 29, 2020, they subscribed to the pro monthly plan then they upgraded to the pro annual plan on August 29, 2020.
 
 ## B. Data Analysis Questions
 ### 1. How many customers has Foodie-Fi ever had?
