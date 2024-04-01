@@ -169,22 +169,36 @@ FROM foodie_fi.subscriptions
 ) 
 SELECT sub.plan_id, p.plan_name, COUNT(sub.customer_id) as planned_customer,
 ROUND(COUNT(sub.customer_id)/ CAST((SELECT COUNT(DISTINCT customer_id) 
-		    FROM foodie_fi.subscriptions) AS Numeric)*100,0) as percentage_planned_customer
+		    FROM foodie_fi.subscriptions) AS Numeric)*100,1) as percentage_planned_customer
 FROM sub  
 JOIN foodie_fi.plans p ON p.plan_id = sub.plan_id
 WHERE previous_plan =0 
 GROUP BY sub.plan_id, p.plan_name;
 ~~~~
 #### Output:
-![Screenshot 2024-04-01 at 2 20 24 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/4c6b951e-76d5-40a3-9311-a281b1e0e2de)
+![Screenshot 2024-04-01 at 2 32 15 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/9286e061-a791-4912-9a6e-71982c40d7b4)
+
 
 * Over 80% of Foodie-Fi's customer base is subscribed to paid plans, with the majority favouring Plans 1 and 2. However, there is notable room for enhancement in customer acquisition strategies for Plan 3, as it attracts only a minimal percentage of customers despite being a higher-priced option.
   
 ### 7. What is the customer count and percentage breakdown of all 5 `plan_name` values on `2020-12-31`?
 ~~~~sql
-
+WITH sub AS (
+SELECT *,
+DENSE_RANK() OVER (PARTITION BY customer_id ORDER BY start_Date DESC) As lastest
+FROM foodie_fi.subscriptions
+WHERE start_date <='2020-12-31'
+)
+SELECT sub.plan_id, p.plan_name, COUNT(customer_id) as number_customer,
+ROUND(COUNT(sub.customer_id)/ CAST((SELECT COUNT(DISTINCT customer_id) 
+		    FROM foodie_fi.subscriptions) AS Numeric)*100,1) as percentage_customer
+FROM sub
+JOIN foodie_fi.plans p ON p.plan_id = sub.plan_id
+WHERE lastest = 1
+GROUP BY sub.plan_id, p.plan_name;
 ~~~~
 #### Output:
+![Screenshot 2024-04-01 at 2 32 38 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/5d300b46-8d58-4fcc-b70c-1509b3ef8b73)
 
 ### 8. How many customers have upgraded to an annual plan in 2020?
 ~~~~sql
