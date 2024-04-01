@@ -230,17 +230,43 @@ WHERE plan_id = 3;
   
 ### 10. Can you further break this average value into 30-day periods (i.e. 0-30 days, 31-60 days etc)
 ~~~~sql
-
+WITH sub as (
+SELECT *,
+MIN(start_date) OVER (PARTITION BY customer_id) as join_date
+FROM foodie_fi.subscriptions s
+)
+, sub2 as (
+SELECT start_date - join_date as days_to_upgrade, 
+WIDTH_BUCKET(start_date - join_date, 0,365,12) as period_day
+-- Put customers in 30-day-period buckets based on the average number of days taken to upgrade to the pro annual plan
+FROM sub
+WHERE plan_id = 3
+)
+SELECT CONCAT((period_day -1 )* 30,' - ', period_day*30, ' days') as "30_Day_Period",
+COUNT(days_to_upgrade) number_customers
+FROM sub2
+GROUP BY period_day
+ORDER BY period_day;
 ~~~~
 #### Output:
+![Screenshot 2024-04-01 at 3 20 00 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/3c2be3ed-f914-456a-97f3-75db4c7ee821)
 
 ### 11. How many customers were downgraded from a pro monthly to a basic monthly plan in 2020?
 ~~~~sql
-
+WITH sub as (
+SELECT *,
+LAG(plan_id) OVER (PARTITION BY customer_id) as previous_plan
+FROM foodie_fi.subscriptions s
+WHERE Start_date <='2020-12-31'
+)
+SELECT COUNT(customer_id) as downgraded_customer
+FROM sub
+WHERE plan_id = 1 AND previous_plan =2;
 ~~~~
 #### Output:
+![Screenshot 2024-04-01 at 3 23 37 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/4969abf4-9e79-4a49-8a63-b6fe604bf24e)
 
-
+* In 2020, there were no instances customers downgraded from a pro monthly plan to a basis monthly plan
 ## C. Challenge Payment Question
 
 ### The Foodie-Fi team wants you to create a new `payments` table for the year 2020 that includes amounts paid by each customer in the `subscriptions` table with the following requirements:
