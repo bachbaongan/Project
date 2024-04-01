@@ -266,7 +266,7 @@ WHERE plan_id = 1 AND previous_plan =2;
 #### Output:
 ![Screenshot 2024-04-01 at 3 23 37 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/4969abf4-9e79-4a49-8a63-b6fe604bf24e)
 
-* In 2020, there were no instances customers downgraded from a pro monthly plan to a basis monthly plan
+* In 2020, there were no instances of customers downgraded from a pro monthly plan to a basis monthly plan
 ## C. Challenge Payment Question
 
 ### The Foodie-Fi team wants you to create a new `payments` table for the year 2020 that includes amounts paid by each customer in the `subscriptions` table with the following requirements:
