@@ -269,7 +269,7 @@ WHERE plan_id = 1 AND previous_plan =2;
 * In 2020, there were no instances of customers downgraded from a pro monthly plan to a basis monthly plan
 ## C. Challenge Payment Question
 
-### The Foodie-Fi team wants you to create a new `payments` table for the year 2020 that includes amounts paid by each customer in the `subscriptions` table with the following requirements:
+The Foodie-Fi team wants you to create a new `payments` table for the year 2020 that includes amounts paid by each customer in the `subscriptions` table with the following requirements:
 
 * monthly payments always occur on the same day of the month as the original `start_date` of any monthly paid plan
 * upgrades from basic to monthly or pro plans are reduced by the current paid amount in that month and start immediately
@@ -311,7 +311,7 @@ WHERE sub.plan_id !=0;
 ![Screenshot 2024-04-01 at 4 26 53 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/eb789bd1-7e7f-4f3f-96c7-dc634c6142c0)
 
 ## D. Outside The Box Questions
-### The following are open-ended questions which might be asked during a technical interview for this case study - there are no right or wrong answers, but answers that make sense from both a technical and a business perspective make an amazing impression!
+The following are open-ended questions which might be asked during a technical interview for this case study - there are no right or wrong answers, but answers that make sense from both a technical and a business perspective make an amazing impression!
 
 ### 1. How would you calculate the rate of growth for Foodie-Fi?
 ~~~~sql
