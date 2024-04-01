@@ -115,15 +115,29 @@ ORDER BY month;
 * March boasts the highest count of trial plans among all months, whereas February records the lowest
 ### 3. What plan `start_date` values occur after the year 2020 for our dataset? Show the breakdown by a count of events for each `plan_name`
 ~~~~sql
-
+SELECT p.plan_id, p.plan_name, COUNT(s.plan_id)as number_plan
+FROM foodie_fi.subscriptions s
+JOIN foodie_fi.plans p ON s.plan_id = p.plan_id
+WHERE EXTRACT(YEAR FROm s.start_date) >=2021
+GROUP BY p.plan_id, p.plan_name
+ORDER BY p.plan_id;
 ~~~~
 #### Output:
+![Screenshot 2024-04-01 at 1 42 48 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/1d195c5a-0a2a-4964-87de-0a5962d800ce)
 
 ### 4. What is the customer count and percentage of customers who have churned rounded to 1 decimal place?
 ~~~~sql
-
+SELECT COUNT(s.customer_id) as churn_customer,
+ROUND(COUNT(s.customer_id)/CAST((SELECT COUNT(DISTINCT customer_id) 
+								                         FROM foodie_fi.subscriptions) as Numeric)*100,1) as percentage_churn_customer
+FROM foodie_fi.subscriptions s
+JOIN foodie_fi.plans p ON s.plan_id = p.plan_id
+WHERE p.plan_name ='churn'
 ~~~~
 #### Output: 
+![Screenshot 2024-04-01 at 1 49 55 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/77ab3832-4bd7-449a-9d52-077e2ee0b6a4)
+
+* A total of 307 customers have churned from Foodie-Fi, representing a significant portion of approximately 30.7% of the overall customer count
 
 ### 5. How many customers have churned straight after their initial free trial - what percentage is this rounded to the nearest whole number?
 ~~~~sql
