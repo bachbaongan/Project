@@ -8,7 +8,7 @@
 * [Question and Solution](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%234/README.md#question-and-solution)
 
   * [A. Customer Nodes Exploration](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%234/README.md#a-customer-nodes-exploration)
-  * [B. Customer Transactions]
+  * [B. Customer Transactions](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%234/README.md#b-customer-transactions)
   * [C. Data Allocation Challenge]
   * [D. Extra Challenge]
   * [E.Extension Request]
