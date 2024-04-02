@@ -11,7 +11,7 @@
   * [B. Customer Transactions](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%234/README.md#b-customer-transactions)
   * [C. Data Allocation Challenge](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%234/README.md#c-data-allocation-challenge)
   * [D. Extra Challenge](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%234/README.md#d-extra-challenge)
-  * [E.Extension Request]
+  * [E.Extension Request](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%234/README.md#eextension-request)
     
 ## Business task: 
 Danny has introduced Data Bank, a novel endeavour that not only conducts banking operations but also serves as the globe's most impregnable distributed data storage solution.
@@ -63,7 +63,7 @@ Special notes:
 
 * Data Bank wants an initial calculation which does not allow for compounding interest, however, they may also be interested in a daily compounding interest calculation so you can try to perform this calculation if you have the stamina!
 
-## E.Extension Request
+## E. Extension Request
 The Data Bank team wants you to use the outputs generated from the above sections to create a quick PowerPoint presentation which will be used as marketing materials for both external investors who might want to buy Data Bank shares and new prospective customers who might want to bank with Data Bank.
 
 * 1. Using the outputs generated from the customer node questions, generate a few headline insights that Data Bank might use to market its world-leading security features to potential investors and customers.
