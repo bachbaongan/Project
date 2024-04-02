@@ -4,7 +4,7 @@
 ## 📖 Table of contents:
 
 * [Business task](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%234/README.md#business-task)
-* [Entity Relationship Diagram]
+* [Entity Relationship Diagram](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%234/README.md#entity-relationship-diagram)
 * [Question and Solution]
 
   * [A. Customer Nodes Exploration] 
