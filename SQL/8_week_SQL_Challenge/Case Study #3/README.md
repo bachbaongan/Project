@@ -1,4 +1,4 @@
-# 🥑 Case Study #3: Foodie-Fi
+# 🥑 Case Study #3 - Foodie-Fi
 ![3-2](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/95e36d65-d569-4395-982d-cd4f86df4f3a)
 
 ## 📖 Table of contents:
