@@ -1,4 +1,4 @@
-# 🏦 Case Study #4: Data Bank
+# 🏦 Case Study #4 - Data Bank
 ![4](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/60d41653-653f-4f6f-926a-a7ef127e8c5c)
 
 ## 📖 Table of contents:
