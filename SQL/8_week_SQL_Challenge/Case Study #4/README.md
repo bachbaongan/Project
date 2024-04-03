@@ -168,9 +168,9 @@ ORDER BY month_end_series.customer_id,month_end_series.end_of_month
 --Final monthly statement with the closing balances
 SELECT *, 
 SUM(total_monthly_change) OVER (PARTITION BY customer_id
-							    ORDER BY end_of_month
-							    ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
-							   ) as total_closing_balance
+				ORDER BY end_of_month
+				ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+				) as total_closing_balance
 FROM monthly_change;
 ~~~~
 #### Output:
@@ -190,12 +190,12 @@ ORDER BY customer_id,close_of_month
 , closing_balance AS (
 SELECT customer_id, close_of_month,
 SUM(transaction_change_balance) OVER (PARTITION BY customer_id
-							    ORDER BY close_of_month
-							    ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
-							   ) as total_closing_balance
+				      ORDER BY close_of_month
+				      ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+				      ) as total_closing_balance
 FROM month_balances
 )
--- Percentage modify in closing balance for each customer in each month
+-- Percentage modification in closing balance for each customer in each month
 , percentage_growth AS (
 SELECT *, 
 100.0*(total_closing_balance -LAG(total_closing_balance) OVER (PARTITION BY customer_id ORDER BY close_of_month))
