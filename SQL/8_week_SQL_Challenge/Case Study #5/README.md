@@ -8,7 +8,7 @@
 * [Question and Solution](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%235/README.md#question-and-solution)
 
   * [A. Data Cleansing Steps](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%235/README.md#a-data-cleansing-steps)
-  * [B. Data Exploration]
+  * [B. Data Exploration](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%235/README.md#b-data-exploration)
   * [C. Before & After Analysis]
   * [D. Bonus Question]
     
