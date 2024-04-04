@@ -12,7 +12,7 @@ These solutions emphasize my proficiency in tackling varied SQL challenges, demo
 * 🍕 [Case Study #2 - Pizza Runner](https://github.com/bachbaongan/Portfolio_Data/tree/main/SQL/8_week_SQL_Challenge/Case%20Study%20%232)
 * 🥑 [Case Study #3 - Foodie-Fi](https://github.com/bachbaongan/Portfolio_Data/tree/main/SQL/8_week_SQL_Challenge/Case%20Study%20%233)
 * 🏦 [Case Study #4 - Data Bank](https://github.com/bachbaongan/Portfolio_Data/tree/main/SQL/8_week_SQL_Challenge/Case%20Study%20%234)
-* 🛒 [Case Study #5 - Data Mart]
+* 🛒 [Case Study #5 - Data Mart](https://github.com/bachbaongan/Portfolio_Data/tree/main/SQL/8_week_SQL_Challenge/Case%20Study%20%235)
 * [Case Study #6 - Clique Bait]
 * [Case Study #7 - Balanced Tree Clothing Co.]
 * [Case Study #8 - Fresh Segments]
