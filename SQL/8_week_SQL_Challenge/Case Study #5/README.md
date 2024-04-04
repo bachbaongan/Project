@@ -1,4 +1,4 @@
-# 🏦 Case Study #5 - Data Mart
+# 🛒 Case Study #5 - Data Mart
 ![5](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/c4e43105-9fb0-4994-abe3-07eb03cbf101)
 
 ## 📖 Table of contents:
