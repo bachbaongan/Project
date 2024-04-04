@@ -324,13 +324,101 @@ FROM sub;
 Which areas of the business have the highest negative impact in sales metrics performance in 2020 for the 12-week before and after period?
 
 * region
-* platform
-* age_band
-* demographic
-* customer_type
-
-Do you have any further recommendations for Danny’s team at Data Mart or any interesting insights based off this analysis? 
 ~~~~sql
-
+WITH SUB AS (
+SELECT region, 
+SUM(CASE WHEN week_number BETWEEN 13 AND 24 THEN sales ELSE 0 END) as before_baseline,
+SUM(CASE WHEN week_number BETWEEN 25 AND 37 THEN sales ELSE 0 END) as after_baseline
+FROM clean_weekly_sales
+GROUP BY region
+)
+SELECT region, after_baseline - before_baseline as sales_variance,
+ROUND(100.0*(after_baseline-before_baseline)/before_baseline,2) as variance_percentage
+FROM sub
+ORDER BY variance_percentage;
 ~~~~
 #### Output:
+![Screenshot 2024-04-04 at 5 40 55 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/ff8ab95f-6034-45c2-be67-824a5dd6c52e)
+
+**Insights and recommendations:**
+After switching to new packaging, sales declined in most countries. The most pronounced drop occurred in Asia, with a decrease of 1.33%. To mitigate this, Danny should consider reducing the number of products featuring sustainable packaging in this region. Conversely, Europe experienced a noteworthy increase of 4.96%, while Africa saw a modest rise of 1.1%. These regions present opportunities for Danny to allocate more resources and investment.
+  
+* platform
+~~~~sql
+WITH SUB AS (
+SELECT platform, 
+SUM(CASE WHEN week_number BETWEEN 13 AND 24 THEN sales ELSE 0 END) as before_baseline,
+SUM(CASE WHEN week_number BETWEEN 25 AND 37 THEN sales ELSE 0 END) as after_baseline
+FROM clean_weekly_sales
+GROUP BY platform
+)
+SELECT platform, after_baseline - before_baseline as sales_variance,
+ROUND(100.0*(after_baseline-before_baseline)/before_baseline,2) as variance_percentage
+FROM sub
+ORDER BY variance_percentage;
+~~~~
+#### Output:
+![Screenshot 2024-04-04 at 5 41 07 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/17dbf017-24af-4957-9df6-1a1cbcee9a7d)
+
+**Insights and recommendations:**
+Sales for Shopify stores surged by 9.35%, whereas retail stores experienced a slight decline of 0.59%. Danny should consider prioritizing the placement of products with sustainable packaging in Shopify stores to capitalize on this trend.
+  
+* age_band
+~~~~sql
+WITH SUB AS (
+SELECT age_band, 
+SUM(CASE WHEN week_number BETWEEN 13 AND 24 THEN sales ELSE 0 END) as before_baseline,
+SUM(CASE WHEN week_number BETWEEN 25 AND 37 THEN sales ELSE 0 END) as after_baseline
+FROM clean_weekly_sales
+GROUP BY age_band
+)
+SELECT age_band, after_baseline - before_baseline as sales_variance,
+ROUND(100.0*(after_baseline-before_baseline)/before_baseline,2) as variance_percentage
+FROM sub
+ORDER BY variance_percentage;
+~~~~
+#### Output:
+![Screenshot 2024-04-04 at 5 41 39 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/567e7f7e-cb6d-42c6-a53a-b1a1a648535e)
+
+**Insights and recommendations:**
+Sales across all age groups experienced a slight decrease. However, the Middle-Aged and Young Adult segments were more adversely affected than Retirees. It's advisable not to target these age groups with new packaging initiatives.
+  
+* demographic
+~~~~sql
+WITH SUB AS (
+SELECT demographic, 
+SUM(CASE WHEN week_number BETWEEN 13 AND 24 THEN sales ELSE 0 END) as before_baseline,
+SUM(CASE WHEN week_number BETWEEN 25 AND 37 THEN sales ELSE 0 END) as after_baseline
+FROM clean_weekly_sales
+GROUP BY demographic
+)
+SELECT demographic, after_baseline - before_baseline as sales_variance,
+ROUND(100.0*(after_baseline-before_baseline)/before_baseline,2) as variance_percentage
+FROM sub
+ORDER BY variance_percentage;
+~~~~
+#### Output:
+![Screenshot 2024-04-04 at 5 42 01 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/91fa2222-50e5-41cb-a3dd-12f35553aecd)
+
+**Insights and recommendations:**
+There was a slight decrease in sales across all demographic groups. Couples experienced a more pronounced negative impact on sales compared to Families. It would be prudent not to target these groups with new packaging strategies. 
+
+* customer_type
+~~~~sql
+WITH SUB AS (
+SELECT customer_type, 
+SUM(CASE WHEN week_number BETWEEN 13 AND 24 THEN sales ELSE 0 END) as before_baseline,
+SUM(CASE WHEN week_number BETWEEN 25 AND 37 THEN sales ELSE 0 END) as after_baseline
+FROM clean_weekly_sales
+GROUP BY customer_type
+)
+SELECT customer_type, after_baseline - before_baseline as sales_variance,
+ROUND(100.0*(after_baseline-before_baseline)/before_baseline,2) as variance_percentage
+FROM sub
+ORDER BY variance_percentage;
+~~~~
+#### Output:
+![Screenshot 2024-04-04 at 5 42 27 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/c15d8907-a9b6-4329-9946-8ff6d2ba2ab1)
+
+**Insights and recommendations:**
+Sales declined for both Guests and Existing customers, but there was an increase in sales for New customers. I would need additional analysis to figure out why New customers showed interest in sustainable packages.
