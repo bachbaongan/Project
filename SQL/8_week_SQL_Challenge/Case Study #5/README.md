@@ -39,8 +39,7 @@ The columns are pretty self-explanatory based on the column names but here are s
 
 Each record in the dataset is related to a specific aggregated slice of the underlying sales data rolled up into a `week_date` value which represents the start of the sales week.
 
-### Example Rows
-10 random rows are shown in the table output below from data_mart.weekly_sales:
+10 random rows are shown in the table output below from `data_mart.weekly_sales`:
 ![Screenshot 2024-04-04 at 12 36 34 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/baf4afac-9b7d-4d4a-baec-015b8fc3fa10)
 
 ## Question and Solution
