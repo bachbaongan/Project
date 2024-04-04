@@ -59,6 +59,7 @@ segment	| age_band
 3 or 4|Retirees
 
 * Add a new `demographic` column using the following mapping for the first letter in the segment values:
+  
 segment	| demographic
 ---|---
 C |	Couples
