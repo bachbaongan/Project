@@ -7,9 +7,9 @@
 * [Entity Relationship Diagram](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%236/README.md#entity-relationship-diagram)
 * [Question and Solution](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%236/README.md#question-and-solution)
 
-  * [A. Digital Analysis](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%234/README.md#a-digital-analysis)
-  * [B. Product Funnel Analysis](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%234/README.md#b-product-funnel-analysis)
-  * [C. Campaigns Analysis](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%234/README.md#c-campaigns-analysis)
+  * [A. Digital Analysis](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%236/README.md#a-digital-analysis)
+  * [B. Product Funnel Analysis](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%236/README.md#b-product-funnel-analysis)
+  * [C. Campaigns Analysis](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%236/README.md#c-campaigns-analysis)
      
 ## Business task: 
 Clique Bait is an online seafood store.
