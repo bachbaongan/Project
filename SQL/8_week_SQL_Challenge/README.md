@@ -4,7 +4,7 @@ I've included the solutions to the eight case studies from the [#8WeekSQLChallen
 
 These solutions emphasize my proficiency in tackling varied SQL challenges, demonstrating my adeptness in formulating SQL queries and problem-solving using PostgreSQL to tackle this case study.
 
-🔆 I'd like to express my gratitude to [Katie Huang](https://github.com/katiehuangx) for motivating me to undertake this challenge, and special thanks to [Danny Ma](https://www.linkedin.com/company/datawithdanny/) for creating this engaging interactive task. 
+🔆 Special thanks to [Danny Ma](https://www.linkedin.com/company/datawithdanny/) for creating this engaging interactive task. 
 
 ## ℹ️  Table Of Contents
 
