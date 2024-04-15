@@ -353,11 +353,33 @@ Generate a table that has 1 single row for every unique `visit_id` record and ha
 * `click`: count of ad clicks for each visit
 * (Optional column)`cart_products`: a comma-separated text value with products added to the cart sorted by the order they were added to the cart (hint: use the `sequence_number`)
 
-Use the subsequent dataset to generate at least 5 insights for the Clique Bait team - bonus: prepare a single A4 infographic that the team can use for their management reporting sessions, be sure to emphasise the most important points from your findings.
+~~~~sql
+SELECT u.user_id, e.visit_id, 
+MIN(e.event_time) as visit_start_time,
+SUM(CASE WHEN ei.event_name ='Page View' THEN 1 ELSE 0 END) AS page_views,
+SUM(CASE WHEN ei.event_name ='Add to Cart' THEN 1 ELSE 0 END) AS cart_adds,
+SUM(CASE WHEN ei.event_name ='Purchase' THEN 1 ELSE 0 END) AS purchase,
+ci.campaign_name,
+SUM(CASE WHEN ei.event_name ='Ad Impression' THEN 1 ELSE 0 END) AS impression,
+SUM(CASE WHEN ei.event_name ='Ad Click' THEN 1 ELSE 0 END) AS click,
+STRING_AGG(CASE WHEN ei.event_name = 'Add to Cart' THEN ph.page_name END, ', ' ORDER BY e.sequence_number ) 
+ AS cart_products
+INTO campaign_summary
+FROM clique_bait.events e
+JOIN clique_bait.users u ON e.cookie_id = u.cookie_id
+JOIN clique_bait.event_identifier ei ON ei.event_type = e.event_type
+JOIN clique_bait.page_hierarchy ph ON e.page_id = ph.page_id
+LEFT JOIN clique_bait.campaign_identifier ci ON e.event_time BETWEEN ci.start_date AND ci.end_date
+GROUP BY u.user_id, e.visit_id,ci.campaign_name
+ORDER BY u.user_id, e.visit_id;
+~~~~
+
+* 3,564 rows in total. The first 10 rows:
+![Screenshot 2024-04-12 at 3 16 35 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/f164bed8-7c7a-46cf-b769-2091400ee79c)
 
 Some ideas you might want to investigate further include:
 
 * Identifying users who have received impressions during each campaign period and comparing each metric with other users who did not have an impression event
 * Does clicking on an impression lead to higher purchase rates?
-* What is the uplift in purchase rate when comparing users who click on a campaign impression versus users who do not receive an impression? What if we compare them with users who just an impression but do not click?
-* What metrics can you use to quantify the success or failure of each campaign compared to eachother?
+* What is the uplift in purchase rate when comparing users who click on a campaign impression versus users who do not receive an impression? What if we compare them with users who just make an impression but do not click?
+* What metrics can you use to quantify the success or failure of each campaign compared to each other?
