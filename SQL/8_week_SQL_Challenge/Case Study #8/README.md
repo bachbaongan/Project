@@ -31,6 +31,10 @@ This table contains information about aggregated interest metrics for a specific
 
 Each record in this table represents the performance of a specific interest_id based on the client’s customer base interest measured through clicks and interactions with specifically targeted advertising content.
 
+15 out of 14273 rows
+![Screenshot 2024-04-16 at 12 26 13 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/a68f8749-4ca2-46fc-88c6-dc69eccd906a)
+
+
 ##### For example - the first row of the `interest_metrics` table" 
 In July 2018, the `composition` metric was 11.89, meaning that 11.89% of the client’s customer list interacted with the interest `interest_id` = 32486 - we can link `interest_id` to a separate mapping table to find the segment name called “Vacation Rental Accommodation Researchers”
 
@@ -40,11 +44,14 @@ The `ranking` and `percentage_ranking` relate to the order of `index_value` reco
 
 ### Interest Map
 This mapping table links the `interest_id` with their relevant interest information. You will need to join this table onto the previous `interest_details` table to obtain the `interest_name` as well as any details about the summary information.
+15 out of 1209 rows
+![Screenshot 2024-04-16 at 12 25 18 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/a9d622d3-2c68-4491-9173-ccd7924482ad)
 
 
 ## Question and Solution
 ## A. Data Exploration and Cleansing
 ### 1. Update the `fresh_segments.interest_metrics` table by modifying the `month_year` column to be a date data type with the start of the month
+
 ### 2. What is the count of records in the `fresh_segments.interest_metrics` for each `month_year` value sorted in chronological order (earliest to latest) with the null values appearing first?
 ### 3. What do you think we should do with these null values in the `fresh_segments.interest_metrics`?
 ### 4. How many `interest_id` values exist in the `fresh_segments.interest_metrics` table but not in the fresh_segments.interest_map table? What about the other way around?
