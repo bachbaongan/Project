@@ -26,15 +26,20 @@ For this case study, there is a total of 4 datasets. However you will only need 
 
 * Product Details
 balanced_tree.product_details includes all information about the range that Balanced Clothing sells in their store.
+![Screenshot 2024-04-16 at 11 58 47 AM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/79b49bb8-aeab-4892-9846-09bde1f0299e)
 
 * Product Sales
 balanced_tree.sales contains product level information for all the transactions made for Balanced Tree including quantity, price, a percentage discount, member status, a transaction ID and also the transaction timestamp.
+15 rows out of 15095 rows
+![Screenshot 2024-04-16 at 12 00 20 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/c315eb8b-5092-424c-bc0c-a984b33bff9b)
 
 * Product Hierarchy & Product Price
 These tables are used only for the bonus question where we will use them to recreate the balanced_tree.product_details table.
 balanced_tree.product_hierarchy
+![Screenshot 2024-04-16 at 11 59 19 AM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/7549cfd6-2df9-4372-8373-1392b5d3fcf8)
 
 balanced_tree.product_prices
+![Screenshot 2024-04-16 at 11 59 38 AM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/bb8267c5-f4be-435e-bdf2-ae6549c4f905)
 
 
 ## Question and Solution
