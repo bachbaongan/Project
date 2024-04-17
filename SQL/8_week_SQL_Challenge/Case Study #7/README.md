@@ -10,8 +10,7 @@
   * [A. High Level Sales Analysis](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%237/README.md#a-high-level-sale-analysis)
   * [B. Transaction Analysis](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%237/README.md#b-transaction-analysis)
   * [C. Product Analysis](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%237/README.md#c-product-analysis)
-  * [D. Reporting Challenge](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%237/README.md#d-reporting-challenge)
-  * [E. Bonus Challenge](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%237/README.md#e-bonus-challenge)
+  * [D. Bonus Challenge](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%237/README.md#e-bonus-challenge)
      
 ## Business task: 
 Balanced Tree Clothing Company prides itself on providing an optimized range of clothing and lifestyle wear for the modern adventurer!
@@ -309,23 +308,21 @@ WHERE combo_count = (SELECT MAX(combo_count) FROM combo_count);
 ![Screenshot 2024-04-17 at 11 35 13 AM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/5d74e5a1-93c1-46a3-a765-ee831feecf74)
 
 
-
-## D. Reporting Challenge
-Write a single SQL script that combines all of the previous questions into a scheduled report that the Balanced Tree team can run at the beginning of each month to calculate the previous month’s values.
-
-Imagine that the Chief Financial Officer (who is also Danny) has asked for all of these questions at the end of every month.
-
-He first wants you to generate the data for January only - but then he also wants you to demonstrate that you can easily run the samne analysis for February without many changes (if at all).
-
-Feel free to split up your final outputs into as many tables as you need - but be sure to explicitly reference which table outputs relate to which question for full marks :)
-~~~~sql
-
-~~~~
-
-
-## E. Bonus Challenge
+## D. Bonus Challenge
 Use a single SQL query to transform the product_hierarchy and product_prices datasets to the product_details table.
 ~~~~sql
-
+SELECT pp.product_id, pp.price,
+CONCAT(ph1.level_text, ' ', ph2.level_text, ' - ', ph3.level_text) as product_name,
+ph3.id as cateogory_id, 
+ph2.id as segment_id, 
+ph1.id as style_id, 
+ph3.level_text as category_name,
+ph2.level_text as segment_name,
+ph1.level_text as stlye_name
+FROM balanced_tree.product_hierarchy ph1
+JOIN balanced_tree.product_hierarchy ph2 ON ph1.parent_id = ph2.id
+JOIN balanced_tree.product_hierarchy ph3 ON ph2.parent_id = ph3.id
+JOIN balanced_tree.product_prices pp ON ph1.id=pp.id;
 ~~~~
+![Screenshot 2024-04-17 at 12 09 34 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/f6a6ef7b-9da4-4b49-a0e7-c3b53b7d6411)
 
