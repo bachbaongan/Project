@@ -125,6 +125,7 @@ FROM fresh_segments.interest_metrics me
 JOIN fresh_segments.interest_map ma ON me.interest_id = ma.id
 WHERE me.interest_id = 21246;
 ~~~~
+![Screenshot 2024-04-22 at 2 12 19 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/3bfdda08-7bb5-47dc-bbc1-8f20269684f6)
 
 ### 7. Are there any records in your joined table where the month_year value is before the `created_at` value from the `fresh_segments.interest_map` table? Do you think these values are valid and why?
 ~~~~sql
@@ -133,6 +134,8 @@ FROM fresh_segments.interest_metrics me
 JOIN fresh_segments.interest_map ma ON me.interest_id = ma.id
 WHERE me.month_year < ma.created_at;
 ~~~~
+![Screenshot 2024-04-22 at 2 14 09 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/684a5705-ad2f-496a-b989-5e17e2d1c962)
+
 There are 188 `month_year` values that are before `created_at` values. However, it may be the case that those 188 created_at values were created at the same month as `month_year` values. The reason is that `month_year` values were set on the first date of the month by default in Question 1.
 
 To check that, we turn the `create_at` to the first date of the month:
@@ -142,6 +145,8 @@ FROM fresh_segments.interest_metrics me
 JOIN fresh_segments.interest_map ma ON me.interest_id = ma.id
 WHERE me.month_year < CAST(CONCAT('01-', EXTRACT(MONTH FROM ma.created_at),'-',EXTRACT(YEAR FROM ma.created_at) ) AS DATE);
 ~~~~
+![Screenshot 2024-04-22 at 2 18 40 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/9abe0208-714c-46b6-a35c-3f39ed662969)
+
 Since all month_year and created_at were at the same month, these values are valid.
 
 ## B. Interest Analysis
