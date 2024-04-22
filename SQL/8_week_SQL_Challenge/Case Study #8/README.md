@@ -44,6 +44,7 @@ The `ranking` and `percentage_ranking` relate to the order of `index_value` reco
 
 ### Interest Map
 This mapping table links the `interest_id` with their relevant interest information. You will need to join this table onto the previous `interest_details` table to obtain the `interest_name` as well as any details about the summary information.
+
 15 out of 1209 rows
 ![Screenshot 2024-04-16 at 12 25 18 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/a9d622d3-2c68-4491-9173-ccd7924482ad)
 
