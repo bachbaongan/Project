@@ -29,7 +29,7 @@ Danny has asked for your assistance to analyze aggregated metrics for an example
 ### Interest Metrics
 This table contains information about aggregated interest metrics for a specific major client of Fresh Segments which makes up a large proportion of their customer base.
 
-Each record in this table represents the performance of a specific interest_id based on the client’s customer base interest measured through clicks and interactions with specifically targeted advertising content.
+Each record in this table represents the performance of a specific `interest_id` based on the client’s customer base interest measured through clicks and interactions with specifically targeted advertising content.
 
 15 out of 14273 rows
 ![Screenshot 2024-04-16 at 12 26 13 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/a68f8749-4ca2-46fc-88c6-dc69eccd906a)
