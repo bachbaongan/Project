@@ -1,4 +1,4 @@
-# 🍊 Case Study #8 - Fresh Segments
+# 🍊 Case Study #8 - [Fresh Segments](https://8weeksqlchallenge.com/case-study-8/)
 ![8](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/1745984a-2d51-41c8-9d59-a7920e12fffb)
 
 ## 📖 Table of contents:
