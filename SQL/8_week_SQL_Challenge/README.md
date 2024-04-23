@@ -27,7 +27,7 @@ Danny’s Diner needs your assistance to help the restaurant stay afloat - the r
 Let's view the [case study](https://8weeksqlchallenge.com/case-study-1/) and [my solution](https://github.com/bachbaongan/Portfolio_Data/tree/main/SQL/8_week_SQL_Challenge/Case%20study%20%231) for Danny.
 
 
-Let's view the [case study]((https://8weeksqlchallenge.com/case-study-2/)) and [my solution](https://github.com/bachbaongan/Portfolio_Data/tree/main/SQL/8_week_SQL_Challenge/Case%20Study%20%232) for Danny.
+Let's view the [case study](https://8weeksqlchallenge.com/case-study-2/) and [my solution](https://github.com/bachbaongan/Portfolio_Data/tree/main/SQL/8_week_SQL_Challenge/Case%20Study%20%232) for Danny.
 
 Let's view the [case study](https://8weeksqlchallenge.com/case-study-3/) and [my solution](https://github.com/bachbaongan/Portfolio_Data/tree/main/SQL/8_week_SQL_Challenge/Case%20Study%20%233) for Danny.
 
