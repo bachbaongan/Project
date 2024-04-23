@@ -29,7 +29,7 @@ Let's view the [case study](https://8weeksqlchallenge.com/case-study-1/) and [my
 # 🍕Case Study #2 - Pizza Runner
 ![2](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/2a76e725-e079-44ed-9790-678ef0651712)
 
-Danny was scrolling through his Instagram feed when something really caught his eye - “80s Retro Styling and Pizza Is The Future!”
+Danny was scrolling through his Instagram feed when something caught his eye - “80s Retro Styling and Pizza Is The Future!”
 
 Danny was sold on the idea, but he knew that pizza alone was not going to help him get seed funding to expand his new Pizza Empire - so he had one more genius idea to combine with it - he was going to Uberize it - and so Pizza Runner was launched!
 
@@ -57,7 +57,7 @@ Customers receive cloud data storage quotas that correlate directly with their a
 
 The Data Bank management team aims to expand their overall customer count while requiring assistance in monitoring the precise data storage requirements of its clientele.
 
-This case study revolves around computing metrics, assessing growth, and aiding business in intelligently analyzing their data to enhance forecasting and strategizing for future advancements!
+This case study revolves around computing metrics, assessing growth, and aiding businesses in intelligently analyzing their data to enhance forecasting and strategizing for future advancements!
 
 Let's view the [case study](https://8weeksqlchallenge.com/case-study-4/) and [my solution](https://github.com/bachbaongan/Portfolio_Data/tree/main/SQL/8_week_SQL_Challenge/Case%20Study%20%234) for Danny.
 
@@ -83,7 +83,7 @@ Let's view the [case study](https://8weeksqlchallenge.com/case-study-5/) and [my
 
 Clique Bait is not like your regular online seafood store - the founder and CEO Danny, was also a part of a digital data analytics team and wanted to expand his knowledge into the seafood industry!
 
-In this case study - you are required to support Danny’s vision and analyse his dataset and come up with creative solutions to calculate funnel fallout rates for the Clique Bait online store.
+In this case study - you are required to support Danny’s vision analyze his dataset and come up with creative solutions to calculate funnel fallout rates for the Clique Bait online store.
 
 Let's view the [case study](https://8weeksqlchallenge.com/case-study-6/) and [my solution](https://github.com/bachbaongan/Portfolio_Data/tree/main/SQL/8_week_SQL_Challenge/Case%20Study%20%236) for Danny.
 
