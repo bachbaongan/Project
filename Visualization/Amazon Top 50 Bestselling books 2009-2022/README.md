@@ -18,6 +18,7 @@ There are 6 questions I will answer here:
 I will utilize Tableau to present and answer the questions I've posed.
 
 You can explore the fully customizable version of the dashboard for deeper insights on my profile at [Amazon Top 50 Bestselling Books](https://public.tableau.com/app/profile/clara.bach/viz/AmazonTop50Bestsellingbooks2009-2022/Dashboard12#1). Below is a screenshot of it:
+
 ![Screenshot 2024-04-19 at 4 07 09 PM](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/a1f5d5bc-b5a2-44d4-a34c-d4e96f93e20f)
 
 ### Analyzing results:
