@@ -14,7 +14,7 @@ These solutions emphasize my proficiency in tackling varied SQL challenges, demo
 * 🏦 [Case Study #4 - Data Bank](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/README.md#-case-study-4---data-bank)
 * 🛒 [Case Study #5 - Data Mart](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/README.md#-case-study-5---data-mart)
 * 🦀 [Case Study #6 - Clique Bait](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/README.md#-case-study-6---clique-bait)
-* 👕 [Case Study #7 - Balanced Tree Clothing Co.](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/README.md#-case-study-7---Balanced-Tree-Clothing-Co.)
+* 👕 [Case Study #7 - Balanced Tree Clothing Co.](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/README.md#-case-study-7---Balanced-Tree-Clothing-Co)
 * 🍊 [Case Study #8 - Fresh Segments](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/README.md#-case-study-8---Fresh-Segments)
 
 # 🍜 Case Study #1 - Danny's Diner
