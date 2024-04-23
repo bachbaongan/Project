@@ -10,9 +10,9 @@ These solutions emphasize my proficiency in tackling varied SQL challenges, demo
 
 * 🍜 [Case Study #1 - Danny's Diner](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/README.md#-case-study-1---dannys-diner)
 * 🍕 [Case Study #2 - Pizza Runner](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/README.md#case-study-2---pizza-runner)
-* 🥑 [Case Study #3 - Foodie-Fi](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/README.md#case-study-3---foodie--fi)
-* 🏦 [Case Study #4 - Data Bank](https://github.com/bachbaongan/Portfolio_Data/tree/main/SQL/8_week_SQL_Challenge/Case%20Study%20%234)
-* 🛒 [Case Study #5 - Data Mart](https://github.com/bachbaongan/Portfolio_Data/tree/main/SQL/8_week_SQL_Challenge/Case%20Study%20%235)
+* 🥑 [Case Study #3 - Foodie-Fi](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/README.md#-case-study-3---foodie-fi)
+* 🏦 [Case Study #4 - Data Bank](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/README.md#-case-study-4---data-bank)
+* 🛒 [Case Study #5 - Data Mart](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/README.md#-case-study-5---data-mart)
 * 🦀 [Case Study #6 - Clique Bait](https://github.com/bachbaongan/Portfolio_Data/tree/main/SQL/8_week_SQL_Challenge/Case%20Study%20%236)
 * 👕 [Case Study #7 - Balanced Tree Clothing Co.](https://github.com/bachbaongan/Portfolio_Data/tree/main/SQL/8_week_SQL_Challenge/Case%20Study%20%237)
 * 🍊 [Case Study #8 - Fresh Segments](https://github.com/bachbaongan/Portfolio_Data/tree/main/SQL/8_week_SQL_Challenge/Case%20Study%20%238)
