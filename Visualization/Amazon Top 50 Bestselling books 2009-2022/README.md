@@ -7,12 +7,12 @@ Using the dataset from [Kaggle](https://www.kaggle.com/datasets/chriskachmar/ama
 ## Data analysis:
 There are 6 questions I will answer here:
 
-### 1. Who are the bestseller Authors and Rating?
-### 2. What is the average price of books within each genre?
-### 3. What is the average number of reviews/user ratings for books in each genre?
-### 4. Which years had the lowest average ratings among the top 50 bestselling books?
-### 5. What book has the highest review?
-### 6. Can we identify any sales trends from the dataset?
+* 1. Who are the bestseller Authors and Rating?
+* 2. What is the average price of books within each genre?
+* 3. What is the average number of reviews/user ratings for books in each genre?
+* 4. Which years had the lowest average ratings among the top 50 bestselling books?
+* 5. What book has the highest review?
+* 6. Can we identify any sales trends from the dataset?
 
 ###  Visualizing the data
 I will utilize Tableau to present and answer the questions I've posed.
