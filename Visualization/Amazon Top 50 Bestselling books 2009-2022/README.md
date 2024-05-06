@@ -25,6 +25,7 @@ You can explore the fully customizable version of the dashboard for deeper insig
 ### 1. Who are the bestseller Authors and Rating?
 Jeff Kinney emerged as the top bestselling author on the Amazon platform from 2009 to 2022, with 14 books and an impressive average user rating of 4.81. He is followed by Rick Riordan, Dav Pikey, Stephenie Meyer, and Bill O'Reilly. 
 The majority of bestselling authors were in the Fiction category. 
+![author](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/3cef0553-e46f-490d-9d49-c19a13b03238)
 
 ### 2. What is the average price of books within each genre?
 The data indicates that over the period examined, non-fiction literature consistently retailed at a higher average price, except in the first year of data (2009). I have included a graph for an overall comparison and a bar chart with adjustable years to illustrate the exact differences.
