@@ -30,6 +30,11 @@ The majority of bestselling authors were in the Fiction category.
 
 ![author 2](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/bad83caf-a9f3-4444-a73b-7ea940bbfa77)
 
+
+
+https://github.com/bachbaongan/Portfolio_Data/assets/144385168/642e3a5e-68ef-40f0-92a2-bd5177bd62cd
+
+
 ### 2. What is the average price of books within each genre?
 The data indicates that over the period examined, non-fiction literature consistently retailed at a higher average price, except in the first year of data (2009). I have included a graph for an overall comparison and a bar chart with adjustable years to illustrate the exact differences.
 
