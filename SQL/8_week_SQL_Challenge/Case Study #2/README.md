@@ -15,9 +15,11 @@
    *  [E. Bonus Questions](https://github.com/bachbaongan/Portfolio_Data/blob/main/SQL/8_week_SQL_Challenge/Case%20Study%20%232/README.md#e-bonus-questions)  	
 
 ## Business task: 
-Danny is expanding his new Pizza Empire and at the same time, he wants to Uberize it, so Pizza Runner was launched!
+Danny, a pizza store owner, aims to expand his business into a Pizza Empire. To secure funding, he innovated by creating Pizza Runner, an Uber-like pizza delivery service.
 
-Danny started by recruiting “runners” to deliver fresh pizza from Pizza Runner Headquarters (otherwise known as Danny’s house) and also maxed out his credit card to pay freelance developers to build a mobile app to accept orders from customers.
+He recruited "runners" to deliver pizzas from his home and hired developers to build a mobile app, maxing out his credit card in the process.
+
+As a data scientist, Danny knows data collection is crucial for growth. He has an entity relationship diagram for his database but needs help cleaning data and performing basic calculations to optimize operations.
 
 ## Entity Relationship Diagram
 ![Pizza Runner](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/adbb7d47-6e4b-450b-b419-1d711adac42c)
