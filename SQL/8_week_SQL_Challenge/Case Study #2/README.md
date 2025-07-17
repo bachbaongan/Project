@@ -1,4 +1,4 @@
-# 🍕Case Study #2 - Pizza Runner
+# 🍕Case Study #2 - [Pizza Runner](https://8weeksqlchallenge.com/case-study-2/)
 ![2](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/2a76e725-e079-44ed-9790-678ef0651712)
 
 ## 📖 Table of contents:
