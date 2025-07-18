@@ -1,4 +1,4 @@
-# 🛒 Case Study #5 - Data Mart
+# 🛒 Case Study #5 - [Data Mart](https://8weeksqlchallenge.com/case-study-5/)
 ![5](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/c4e43105-9fb0-4994-abe3-07eb03cbf101)
 
 ## 📖 Table of contents:
@@ -24,6 +24,8 @@ The key business questions he wants you to help him answer are the following:
 * What was the quantifiable impact of the changes introduced in June 2020?
 * Which platform, region, segment and customer types were impacted most by this change?
 * What can we do about the future introduction of similar sustainability updates to the business to minimize the impact on sales?
+
+Let's view the [case study](https://8weeksqlchallenge.com/case-study-5/) and my solution for Danny.
 
 ## Entity Relationship Diagram
 ![case-study-5-erd](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/b9b87431-a62d-4118-a5ba-f07f70732cb0)
