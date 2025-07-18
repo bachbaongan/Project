@@ -1,4 +1,4 @@
-# 👕 Case Study #7 - Balanced Tree Clothing Co.
+# 👕 Case Study #7 - [Balanced Tree Clothing Co.](https://8weeksqlchallenge.com/case-study-7/)
 ![7](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/1f66127a-0dd1-4203-96aa-47b5eb24c024)
 
 ## 📖 Table of contents:
@@ -21,7 +21,7 @@ Danny, the CEO of this trendy fashion company has asked you to assist the team�
 ![e7 1](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/45f71095-c9af-4237-890a-87d61a7b5844)
 ![e7 2](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/0e12f98b-8f2d-44ab-9aa8-d4983fcf0112)
 
-For this case study, there is a total of 4 datasets. However you will only need to utilize 2 main tables to solve all of the regular questions, and the additional 2 tables are used only for the bonus challenge question!
+For this [case study](https://8weeksqlchallenge.com/case-study-7/), there is a total of 4 datasets. However you will only need to utilize 2 main tables to solve all of the regular questions, and the additional 2 tables are used only for the bonus challenge question!
 
 ### Product Details
 `balanced_tree.product_details` includes all information about the range that Balanced Clothing sells in their store.
