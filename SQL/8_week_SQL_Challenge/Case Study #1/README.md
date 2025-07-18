@@ -3,6 +3,7 @@
 ## Business task: 
 Danny wants to use the data to answer a few simple questions about his customers, especially about their visiting patterns, how much money they’ve spent and also which menu items are their favourite.
 
+Let's view the [case study](https://8weeksqlchallenge.com/case-study-1/) and my solution belowed for Danny.
 
 ## Entity Relationship Diagram
 ![Danny's Diner](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/8542fabe-c847-40fb-a702-77227a815d13)
