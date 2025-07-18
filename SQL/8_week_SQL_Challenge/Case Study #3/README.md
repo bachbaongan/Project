@@ -1,4 +1,4 @@
-# 🥑 Case Study #3 - Foodie-Fi
+# 🥑 Case Study #3 - [Foodie-Fi](https://8weeksqlchallenge.com/case-study-3/)
 ![3-2](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/95e36d65-d569-4395-982d-cd4f86df4f3a)
 
 ## 📖 Table of contents:
@@ -15,7 +15,7 @@
 ## Business task: 
 Danny and his friends launched a new startup Foodie-Fi and started selling monthly and annual subscriptions, giving their customers unlimited on-demand access to exclusive food videos from around the world.
 
-This case study focuses on using subscription-style digital data to answer important business questions on customer journey, payments, and business performances.
+This [case study](https://8weeksqlchallenge.com/case-study-3/) focuses on using subscription-style digital data to answer important business questions on customer journey, payments, and business performances.
 
 ## Entity Relationship Diagram
 ![case-study-3-erd](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/4b72fbc2-4a43-4510-ac8d-38028b734fb9)
