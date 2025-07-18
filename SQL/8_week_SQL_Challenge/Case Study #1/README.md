@@ -1,4 +1,4 @@
-# 🍜 Case Study #1 - Danny's Diner
+# 🍜 Case Study #1 - [Danny's Diner](https://8weeksqlchallenge.com/case-study-1/)
 ![1](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/65533141-66de-4037-b7a3-1a8f6e377010)
 ## Business task: 
 Danny wants to use the data to answer a few simple questions about his customers, especially about their visiting patterns, how much money they’ve spent and also which menu items are their favourite.
