@@ -1,4 +1,4 @@
-# 🏦 Case Study #4 - Data Bank
+# 🏦 Case Study #4 - [Data Bank](https://8weeksqlchallenge.com/case-study-4/)
 ![4](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/60d41653-653f-4f6f-926a-a7ef127e8c5c)
 
 ## 📖 Table of contents:
@@ -20,7 +20,7 @@ Customers receive cloud data storage quotas that correlate directly with their a
 
 The Data Bank management team aims to expand their overall customer count while requiring assistance in monitoring the precise data storage requirements of its clientele.
 
-This case study revolves around computing metrics, assessing growth, and aiding business in intelligently analyzing their data to enhance forecasting and strategizing for future advancements!
+This [case study](https://8weeksqlchallenge.com/case-study-4/) revolves around computing metrics, assessing growth, and aiding business in intelligently analyzing their data to enhance forecasting and strategizing for future advancements!
 
 ## Entity Relationship Diagram
 ![case-study-4-erd](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/c96c2bf2-d562-47c9-9d88-dad5a65b1ada)
