@@ -21,6 +21,8 @@ He recruited "runners" to deliver pizzas from his home and hired developers to b
 
 As a data scientist, Danny knows data collection is crucial for growth. He has an entity relationship diagram for his database but needs help cleaning data and performing basic calculations to optimize operations.
 
+Let's view the [case study](https://8weeksqlchallenge.com/case-study-2/) and my solution for Danny.
+
 ## Entity Relationship Diagram
 ![Pizza Runner](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/adbb7d47-6e4b-450b-b419-1d711adac42c)
 
