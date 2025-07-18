@@ -22,6 +22,8 @@ In particular - the composition and rankings for different interests are provide
 
 Danny has asked for your assistance to analyze aggregated metrics for an example client and provide some high-level insights about the customer list and their interests.
 
+Let's view the [case study](https://8weeksqlchallenge.com/case-study-8/) and my solution for Danny.
+
 ## Entity Relationship Diagram
 ![e8-updated](https://github.com/bachbaongan/Portfolio_Data/assets/144385168/9966c396-13c8-4a27-ab8c-0808c71229bb)
 
